@@ -17,3 +17,8 @@ function displayMatches(){
     const matchArray = findMatches(this.value, results);
     console.log(matchArray);
 }
+
+const searchInput = document.querySelector("#search")
+
+searchInput.addEventListener("change", displayMatches)
+searchInput.addEventListener("keyup", displayMatches)
