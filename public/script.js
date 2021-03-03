@@ -1,15 +1,15 @@
 const endpoint = 'https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json';
-const cities = [];
+const zips = [];
          
 fetch(endpoint)
     .then(blob => blob.json())
-    .then(data => cities.push(...data))
+    .then(data => zips.push(...data))
          
-function findMatches(wordToMatch, cities) {
-    return cities.filter(place => {
-    // here we need to figure out if the city/state matches what was searched
+function findMatches(wordToMatch, zips) {
+    return zips.filter(place => {
+    // here we need to figure out if the zip matches what was searched
     const regex = new RegExp(wordToMatch, 'gi')
-    return place.city.match(regex) || place.state.match(regex)
+    return place.zip.match(regex)
 });
 }
 
@@ -18,19 +18,15 @@ function numberWithCommas(x) {
 }
          
 function displayMatches() {
-    const matchArray = findMatches(this.value, cities);
+    const matchArray = findMatches(this.value, zips);
     const html = matchArray.map(place => {
         const regex = new RegExp(this.value, 'gi');
-        const cityName = place.city.replace(regex, '<span class='h1'>${this.value}</span>');
-        const stateName = place.state.replace(regex, '<span class='h1'>${this.value}</span>');
-        return '
-        <li>
-        <span class='name'>${cityName}, ${stateName}</span>
-        <span class='population'>${numberWithCommas(place.population)}</span>
-        </li>';
+        const zipCode = place.zip.replace(regex, '<span class="h1">${this.value}</span>');
+        return '<li><span class="name">${zipCode}</span></li>';
     }).join('');
     suggestions.innerHTML = html;
 }
+
 const searchInput = document.querySelector('.search');
 const suggestions = document.querySelector('.suggestions');
          
