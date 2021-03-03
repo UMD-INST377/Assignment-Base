@@ -1,5 +1,8 @@
 import { json } from "express";
 
+<script id="myscripttag" src="https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json"></script>
+    document.getElementById("myscripttag").src
+
     const restaurant = [];
     fetch(data)
       .then(blob => blob.json())
