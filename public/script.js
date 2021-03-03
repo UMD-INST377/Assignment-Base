@@ -6,14 +6,14 @@ fetch(endpoint).then(blob => blob.json())
 
 function findMatches(searchQuery){
     return foodPlace.filter(place => {
-        const regex = new RegExp(searchQuery, 'gi');
+        const regex = new RegExp(searchQuery, 'gi'); //regExp is an object that goes into .match method
         return place.city.match(regex) || place.category.match(regex)|| place.name.match(regex);
     });
 }
 
 function displayMatches(){
     const matchArr = findMatches(this.value); //this.value is the data being input in the form
-    const html = matchArr.map(palce => {
+    const html = matchArr.map(palce => { //.map creates an array with equal size but replaces the values with this instead
         return `
         <li>
             <span class="name">${place.name}</span>
@@ -28,7 +28,7 @@ function displayMatches(){
 
 }
 
-const searchInput = document.querySelector('.search');
-const suggestions = document.querySelector('.suggestions');
+const searchInput = document.querySelector('.search'); //This chooses an element with the class search
+const suggestions = document.querySelector('.suggestions'); //Chooses element with class suggestions
 
 searchInput.addEventListener('keyup', displayMatches);
