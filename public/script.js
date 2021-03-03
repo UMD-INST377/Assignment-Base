@@ -36,5 +36,17 @@ const suggestions = document.querySelector('.suggestions');
          
 searchInput.addEventListener('change', displayMatches);
 searchInput.addEventListener('keyup', displayMatches);
-         
-         
+
+
+async function windowActions() {
+    const form = document.querySelector('.userform');
+    const search = document.querySelector('#name');
+
+        form.addEventListener('submit')
+
+    search.addEventListener('input', (event) => {
+        console.log('input', event.target.value);
+    });
+}
+
+window.onload = windowActions;
