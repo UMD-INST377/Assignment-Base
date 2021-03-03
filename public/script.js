@@ -22,7 +22,11 @@ function displayMatches() {
     const html = matchArray.map(place => {
         const regex = new RegExp(this.value, 'gi');
         const zipCode = place.zip.replace(regex, '<span class="h1">${this.value}</span>');
-        return '<li><span class="name">${zipCode}</span></li>';
+        const restaurantName = place.name.replace(regex, '<span class="h1">${this.value}</span>');
+        const restaurantAddress = place.address_line_1.replace(regex, '<span class="h1">${this.value}</span>');
+        const restaurantCategory = place.category.replace(regex, '<span class="h1">${this.value}</span>');
+
+        return '<li><span class="name">${restaurantName, restaurantAddress, restaurantCategory}</span></li>';
     }).join('');
     suggestions.innerHTML = html;
 }
