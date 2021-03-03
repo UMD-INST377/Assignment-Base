@@ -8,12 +8,18 @@
 <script>
     const endpoint = 'https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json';
  
-    const cities = [];
+    const restaurants = [];
 
     fetch(endpoint)
         .then(blob => blob.json())
-        .then(data => cities.push(...data)
- 
+        .then(data => restaurants.push(...data)
+
+    function findMatches(wordToMatch, restaurants) {
+        return restaurants.filter(place => {
+            const regex = new RegExp(wordToMatch, 'gi');
+            return place.name.match(regex) || place.city.match(regex) || place.category.match(regex);
+        })
+    }
 </script>
 </body>
 </html>
