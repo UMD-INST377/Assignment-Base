@@ -7,7 +7,13 @@
 <body>
 <script>
     const endpoint = 'https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json';
-    const restaurants = [];
+ 
+    const cities = [];
+
+    fetch(endpoint)
+        .then(blob => blob.json())
+        .then(data => cities.push(...data)
+ 
 </script>
 </body>
 </html>
