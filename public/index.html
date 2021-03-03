@@ -1,10 +1,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gabby Fagbohunka, Chris Ash</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
 </head>
 <body>
-    Put your app here
+    <h1>Assignment 2</h1>
+    <div class="userform">
+        <form class="search-form" action='/api' method='post'>
+            <label for="restaurants">Restaurants</label>
+            <input type="text" class="city zip" id="search" name="search" placeholder="City or Zip">
+            <ul class="suggestions" id="suggestions">
+                <li>Filter for a city</li>
+                <li>or a zip</li>
+            </ul>
+            <button type="submit">Search Restaurants</button>
+        </form>
+    </div>
 </body>
+<script src="script.js"></script>
 </html>
