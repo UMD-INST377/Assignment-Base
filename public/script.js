@@ -36,7 +36,7 @@ searchInput.addEventListener('keyup', displayMatches);
 
 async function windowActions() {
     const form = document.querySelector('.userform');
-    const search = document.querySelector('#name');
+    const search = document.querySelector('#zipcode');
 
         form.addEventListener('submit')
 
