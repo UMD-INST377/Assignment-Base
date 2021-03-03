@@ -1,0 +1,15 @@
+@import url(//fonts.googleapis.com/css?family=Open+Sans);
+
+h1 {
+    font-size: 2rem;
+    color : white;
+    font-weight: 30; 
+  }
+
+body {
+    width: 60%;
+    min-width: 900px;
+    padding: 50px 0;
+    background-color: #6091C3;
+  }
+  
