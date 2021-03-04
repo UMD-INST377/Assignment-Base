@@ -2,36 +2,38 @@
 const searchInput = document.querySelector('.search');
 const suggestions = document.querySelector('.suggestions');
 
-const cities = [];
-fetch('/api')
-.then(blob => blob.json())
-.then(data => cities.push(...data));
+let places = [];
+fetch('https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json')
+.then(function(blob) {
+    return blob.json();
+})
+.then(function(data) {
+    places = data;
+})
 
-fucntion findMatches(wordToMatch, cities){
-    return cities.filter(place =>{
-        //here we figure out if city or state matches whats searched
-        const regex = new RegExp(wordToMatch, 'gi');
-        console.log('regex', regex)
-        return place.city.match(regex) || place.state.match(regex)
+function displayMatches(e){
+    e.preventDefault();
+
+    const matchArray = places.filter(function(place) {
+        return place.city.includes(searchInput.value) || place.zip.includes(searchInput.value);
     });
-}
 
+    console.log(matchArray);
 
-function displayMatches(){
-    const matchArray = findMatches(this.value, cities);
-    console.log(matchArray)
-    const html = matchArray.map(place => {
-        const regex = new RegExp(this.value, 'gi');
-        const cityName = place.city.replace(regex, `<span class = <'h1>${this.value}</span>`)
-        const stateName = place.state.replace(regex, `<span class = <'h1>${this.value}</span>`)
-        return `
-        <li>
-        <span class = 'name'>${place.city}, ${place.state}</span>
-        <span class = 'population'>${place.population}</span>
-        
-        </li> `
-    }).join('');
+    let HTML = "";
+    matchArray.forEach(function(place) {
+        HTML += `
+            <li class="">
+                <div class='name'>${place.name}</div>
+                <div class='name'>${place.category}</div>
+                <div class='name'>${place.address_line_1}</div>
+                <div class='name'>${place.city}</div>
+                <div class='name'>${place.zip}</div>
+
+            </li>
+        `;
+    });
+    suggestions.innerHTML = HTML;
+
 }
-suggestions.innerHTML = html;
-searchInput.addEventListener('change', displayMatches);
-window.onload = displayMatches ;
+document.querySelector("form").addEventListener('submit', displayMatches);
