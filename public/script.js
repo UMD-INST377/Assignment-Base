@@ -1,3 +1,14 @@
+function filterRestaurant(wordToMatch, info){
+    return info.filter((piece) => {
+        const re = new RegExp(wordToMatch, 'gi');
+        return piece.city.match(re) || piece.zip.match(re);
+    })
+}
+
+function showRestaurantMatches(i){
+    const match = filterRestaurant(i.target.value);
+}
+
 async function windowActions() {
     console.log('window loaded');
     const form = document.querySelector('.userform');
