@@ -2,9 +2,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Document</title>
+    <title>Assignment 1</title>
 </head>
 <body>
-    Put your app here
+<script>
+    const endpoint = 'https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json';
+ 
+    const cities = [];
+
+    fetch(endpoint)
+        .then(blob => blob.json())
+        .then(data => cities.push(...data)
+ 
+</script>
 </body>
 </html>
