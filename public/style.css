@@ -17,3 +17,12 @@ h1, h2, h3 {
 .button.is-primary {
     background: red;
 }
+
+.column-background {
+    background: goldenrod;
+    height: 100px;
+}
+
+.li {
+    background: yellow;
+}
