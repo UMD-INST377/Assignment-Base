@@ -9,3 +9,10 @@ html{
     font-size: medium;
     
 }
+
+.list-item {
+    background: yellow;
+    display: block;
+    height: 50px;
+    margin-bottom: 10px;
+}
