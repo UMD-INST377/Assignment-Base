@@ -20,7 +20,7 @@ function displayMatches(){
         const nameName = place.name.replace(regex, `<span class="h1">${this.value}</span>`);
         const categoryName = place.category.replace(regex, `<span class="h1">${this.value}</span>`);
         return `
-        <li>
+        <li class="box has-background-success-light"> 
             <span class="name">${nameName}, ${categoryName}</span>
             <span class="address">${place.address_line_1} </span>
         </li>
