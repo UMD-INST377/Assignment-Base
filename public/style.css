@@ -12,10 +12,6 @@ body {
   );
 }
 
-#container {
-  max-width: 960px;
-}
-
 span.h1 {
   text-transform: capitalize; /*attempted extra credit*/
 }
