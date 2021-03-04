@@ -2,3 +2,11 @@
 
 body{
     font-family: 'Shippori Mincho B1', serif}
+
+.box{
+    background-image: linear-gradient(rgb(202, 198, 202), rgb(203, 112, 226));
+}
+
+#container{
+    max-width: 960px;
+}
