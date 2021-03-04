@@ -10,7 +10,7 @@ async function windowActions() {
     search.addEventListener('input', (event) => {
         console.log('input', event.target.value)
         const display = data.filter((record) => {
-            return record.city.toUpperCase().includes(event.target.value.toUpperCase()) || record.zip.toUpperCase().includes(event.target.value.toUpperCase())
+            return record.city.toUpperCase().includes(event.target.value.toUpperCase()) || record.zip.includes(event.target.value);
         });
 
         display.forEach(restaurant => {
