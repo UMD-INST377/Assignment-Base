@@ -5,19 +5,18 @@ async function windowActions() {
     const form = document.querySelector('.userform');
     const search = document.querySelector('#zipcode')
     const targetList = document.querySelector('.target-list');
-}
 
-const request = await fetch('/api');
-const data = await request.json();
-console.table(data);
+    const request = await fetch('/api');
+    const data = await request.json();
+    console.table(data);
 
 // code will fire whenever the form is submitted
 // also filters the data list and returns it to the HTML
-form.addEventListener('submit', async (event) => {
-    event.preventDefault();
-    console.log('submit fired', search.value);
-    const filtered = data.filter((record) => record.zip.toUpperCase() === search.value.toUpperCase());
-    filtered.forEach((item) => {
+    form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        console.log('submit fired', search.value);
+        const filtered = data.filter((record) => record.zip.toUpperCase() === search.value.toUpperCase());
+        filtered.forEach((item) => {
         const appendItem = document.createElement("li");
         appendItem.innerText = item.zip;
         targetList.append(appendItem);
@@ -27,7 +26,7 @@ form.addEventListener('submit', async (event) => {
 // this listens for typing into the input box
 search.addEventListener('input', (event) => {
     console.log('input', event.target.value);
-})
+});
 
 // code below is from tutorial
          
@@ -63,5 +62,6 @@ const suggestions = document.querySelector('.suggestions');
          
 searchInput.addEventListener('change', displayMatches);
 searchInput.addEventListener('keyup', displayMatches);
+}
 
 window.onload = windowActions;
