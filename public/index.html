@@ -12,11 +12,9 @@
         <form class="search-form" action='/api' method='post'>
             <label for="restaurants">Restaurants</label>
             <input type="text" class="city zip" id="search" name="search" placeholder="City or Zip">
-            <ul class="suggestions" id="suggestions">
-                <li>Filter for a city</li>
-                <li>or a zip</li>
-            </ul>
-            <button type="submit">Search Restaurants</button>
+            <div class="card">
+                <ul class="suggestions card-content" id="suggestions"></ul>
+            </div>
         </form>
     </div>
 </body>
