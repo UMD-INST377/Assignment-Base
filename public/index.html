@@ -7,16 +7,14 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <h1>Assignment 1: Gabby Fagbohunka, Chris Ash </h1>
+    <h1>Assignment 2</h1>
     <div class="userform">
         <form class="search-form" action='/api' method='post'>
             <label for="restaurants">Restaurants</label>
             <input type="text" class="city zip" id="search" name="search" placeholder="City or Zip">
-            <ul class="suggestions" id="suggestions">
-                <li>Filter for a city</li>
-                <li>or a zip</li>
-            </ul>
-            <button type="submit" id = submit name = "submit">Search Restaurants</button>
+            <div class="card">
+                <ul class="suggestions card-content" id="suggestions"></ul>
+            </div>
         </form>
     </div>
 </body>
