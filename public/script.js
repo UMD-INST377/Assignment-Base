@@ -18,12 +18,13 @@ function displayMatches(e){
         return place.city.includes(searchInput.value) || place.zip.includes(searchInput.value);
     });
 
+
     console.log(matchArray);
 
     let HTML = "";
     matchArray.forEach(function(place) {
         HTML += `
-            <li class="">
+            <li class="box">
                 <div class='name'>${place.name}</div>
                 <div class='name'>${place.category}</div>
                 <div class='name'>${place.address_line_1}</div>
@@ -33,6 +34,7 @@ function displayMatches(e){
             </li>
         `;
     });
+   
     suggestions.innerHTML = HTML;
 
 }
