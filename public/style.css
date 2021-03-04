@@ -1,12 +1,21 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css";
 
-body{
-    font-family: 'Shippori Mincho B1', serif}
-
-.box{
-    background-image: linear-gradient(rgb(202, 198, 202), rgb(203, 112, 226));
+body {
+  font-family: "Shippori Mincho B1",
+    serif;
 }
 
-#container{
-    max-width: 960px;
+.box {
+  background-image: linear-gradient(
+    rgb(202, 198, 202),
+    rgb(203, 112, 226)
+  );
+}
+
+#container {
+  max-width: 960px;
+}
+
+span.h1 {
+  text-transform: capitalize; /*attempted extra credit*/
 }
