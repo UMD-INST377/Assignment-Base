@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assignment 1 - Typeahead Requests</title>
-    <link rel="stylesheet" href=href="styles.css" type="text/css">
-     
+    <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body>
+    <div class="gcse-searchbox-only" data-resultsUrl="https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json"></div>
+    <div class="container"> 
+    <h1>Larica Lebedco, Olivia Dissen, Ziyang Lan </br> Assignment 1</h1>
     <form action="/api" method="post"> 
-        <h1>Larica Lebedco, Olivia Dissen, Ziyang Lan </br> Assignment 1</h1>
-      </div>
-       
-        <div class = "container">
-                <input type="text" class="search" placeholder="Search">    
-            </form>      
+        <input type="text" class="search" id="search"
+        placeholder="Search">
+        </form>
     </div>
-
-<script type="text/javasript" src="script.js"></script>  
+    <ul id="restaurantList"></ul>
+</div>
+    <script type="text/javasript" src="script.js"></script>
 </body>
 </html>
