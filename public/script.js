@@ -21,7 +21,8 @@ function displayMatches(){
         const categoryName = place.category.replace(regex, `<span class="h1">${this.value}</span>`);
         return `
         <li class="box has-background-success-light"> 
-            <span class="name">${nameName}, ${categoryName}</span>
+            <span class="name">${nameName}</span><br>
+            <span class="category">${categoryName}</span><br>
             <span class="address">${place.address_line_1} </span>
         </li>
         `;
