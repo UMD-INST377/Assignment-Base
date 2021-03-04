@@ -1,9 +1,13 @@
-const endpoint = 'https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json';
-const restaurants = [];
+// const endpoint = 'https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json';
+// const restaurants = [];
 
-fetch(endpoint)
-    .then(blob => blob.json())
-    .then(data => restaurants.push(...data))
+
+let url = ('https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json')
+let response = await fetch(url);
+
+let commits = await response.json();
+alert(commits[0].author.login);
+
 
 function findMatches(wordToMatch, restaurants) {
     return restaurants.filter(place => {
