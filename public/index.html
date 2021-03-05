@@ -6,7 +6,9 @@
     <title>Assignment 1</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <link rel='stylesheet' type='text/css' href='style.css'>
+    <script src='script.js' charset="utf-8"></script>
 </head>
+
 <body>
     <form action="/api" method="GET">
         <ul>
@@ -22,6 +24,7 @@
         const restaurants = [];
         const request = await fetch(endpoint)
         const arrayName = await request.json()
+
 
         function findMatches(wordToMatch, restaurants) {
             return restaurants.filter(place => {
