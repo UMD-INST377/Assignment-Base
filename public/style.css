@@ -1,5 +1,5 @@
 body {
-    background-color: aqua;
+    background-color: rgb(255, 187, 229);
 }
 
 h1 {
@@ -8,4 +8,10 @@ h1 {
     margin-left: 50;
     font-weight: bold;
 }
+
+li{
+    background: goldenrod;
+}
+
+
 
