@@ -1,30 +1,16 @@
 @import url(//fonts.googleapis.com/css?family=Open+Sans);
 
 h1 {
-  font-size: 2rem;
+  font-size: 4rem;
   color: white;
   font-weight: 30;
   margin-left: 1rem;
+  text-decoration: underline;
 }
 
 body {
     padding: 50px 0;
     background-color: #6091C3;
-}
-
-div li {
-    background-image: linear-gradient(blue, white); 
-}
-/* 
-li, .suggestions{
-    background-color: rgb(241, 241, 121);
-    border-radius: 5px;
-} */
-
-li span {
-  width: 60%;
-  min-width: 900px;
-  padding: 50px 0;
 }
 
 #search{
@@ -39,4 +25,15 @@ h1, #search {
 .suggestions {
     margin-left: 65px;
     width: 585px;
+    background-color: linear-gradient(yellow, white); 
+}
+
+.category, .address, .city, .zip {
+    font-style: italic;
+}
+
+.name {
+    font-size: 25px;
+    font-weight: bold;
+    text-transform:uppercase;
 }
