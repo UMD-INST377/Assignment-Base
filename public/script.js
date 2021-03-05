@@ -3,10 +3,10 @@ async function windowsActions() {
     const request = await fetch(endpoint);
     const arrayName = await request.json();
     
-    function findMatches(wordToMatch, cities){
-        return cities.filter(place => {
+    function findMatches(wordToMatch, types){
+        return types.filter(place => {
             const regex = new RegExp(wordToMatch, 'gi');
-            return place.city.match(regex) || place.state.match(regex);
+            return place.category.match(regex) || place.name.match(regex);
     
         });
     }
@@ -16,16 +16,16 @@ async function windowsActions() {
     }
 
     function displayMatches(event){
-        const matchArray = findMatches(event.target.value, cities);
+        const matchArray = findMatches(event.target.value, types);
         const html = matchArray.map(place => {
             const regex = new RegExp(event.target.value, 'gi');
-            const cityName = place.city.replace(regex, 
+            const TypeRest = place.category.replace(regex, 
                 `<span class="hl">${event.target.value}</span>`);
-            const stateName = place.state.replace(regex, 
+            const RestName = place.name.replace(regex, 
                 `<span class="hl">${event.target.value}</span>`);     
             return `
                 <li>
-                    <span class="name>${cityName}, ${stateName}</span>
+                    <span class="name>${TypeRest}, ${RestName}</span>
                     <span class="population">${numberWithCommas(place.population)}</span>
                 <li>
             `;
@@ -33,9 +33,9 @@ async function windowsActions() {
         suggestions.innerHTML = html;
     }
 
-    const searchInput = document.querySelector('.search');
+    const searchInput = document.querySelector('#name');
     const suggestions = document.querySelector('.suggestions');
-    searchInput.addEventListener('keyup', (evt) => {
+    searchInput.addEventListener('keyup', async (evt) => {
         displayMatches(evt);
         evt.preventDefault();
     });
