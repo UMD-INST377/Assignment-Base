@@ -7,9 +7,25 @@ h1 {
   }
 
 body {
-    width: 60%;
-    min-width: 900px;
+    /* width: 60%;
+    min-width: 900px; */
     padding: 50px 0;
     background-color: #6091C3;
-  }
-  
+}
+
+li, .suggestions{
+    background-color: rgb(241, 241, 121);
+    min-width: 100px;
+    margin-left: 80px;
+}
+/* 
+li, .suggestions {
+    margin-left: 80px; 
+} */
+
+li span {
+    align-items: column;
+    border-radius: 5px;
+    flex-wrap: wrap;
+
+}
