@@ -11,11 +11,13 @@
     <h1>Assignment 2</h1>
     <div class="userform">
         <form class="search-form" action='/api' method='post'>
-            <label for="restaurants">Restaurants</label>
-            <input type="text" class="city zip" id="search" name="search" placeholder="City or Zip">
-            <div class="card">
-                <ul class="suggestions card-content" id="suggestions"></ul>
+            <input type="text" class="city zip is-normal" id="search" name="search" placeholder="City or Zip">
+            <div class="column is-half is-centered">
+                <div class="card">
+                    <ul class="suggestions card-content is-centered" id="suggestions"></ul>
+                </div>
             </div>
+            
         </form>
     </div>
 </body>
