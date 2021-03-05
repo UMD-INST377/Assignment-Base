@@ -1,12 +1,12 @@
 async function windowsActions() {
-    const endpoint = 'https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json';
+    const endpoint = "api";
 
     const request = await fetch(endpoint);
 
     // Holds our list of restaurants
     const restaurants = await request.json();
    
-    // Filter our list of restaurants based on current word phrase inputted
+    // Filter our list of restaurants based on current word phrase input
     function findMatches(wordToMatch, restaurants){
         return restaurants.filter(place => {
             // Here we need to figure out if the restaurant matches our search criteria
