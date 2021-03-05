@@ -2,20 +2,21 @@
 const searchInput = document.querySelector('.search');
 const suggestions = document.querySelector('.suggestions');
 
-let places = [];
+/*let places = [];
 fetch('https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json')
 .then(function(blob) {
     return blob.json();
 })
 .then(function(data) {
  places = data;
-})
+})*/
 
-/*async function windowActions() {
+let places = []
+async function windowActions() {
    console.log('window loaded');
 const request = await fetch('https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json');
-const places = await request.json([]);
-};*/
+places = await request.json([]);
+};
 
 
 function displayMatches(e){
@@ -46,4 +47,4 @@ const HTML = matchArray.reduce((string, place, index) => {
 console.log(HTML)
 }
 document.querySelector("form").addEventListener('submit', displayMatches);
-//window.onload=windowActions();
+window.onload=windowActions();
