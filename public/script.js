@@ -21,11 +21,16 @@ function toTitleCase(str) {
 async function windowActions() {
   const search = document.querySelector("#search");
   const suggestions = document.querySelector(".suggestions");
+  const form = document.querySelector(".form");
 
   const request = await fetch("/api");
   const results = await request.json();
 
-  search.addEventListener("keyup", (event) => {
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+  });
+
+  search.addEventListener("keyup", () => {
     const matchArray = findMatches(search.value, results);
     const html = matchArray
       .map((location) => {
