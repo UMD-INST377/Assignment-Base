@@ -5,12 +5,11 @@
     <title>Assignment 1</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <link rel='stylesheet' type='text/css' href='style.css'>
-
 </head>
 <body>
 <script>
+    
     const endpoint = 'https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json';
- 
     const restaurants = [];
     fetch(endpoint)
         .then(blob => blob.json())
