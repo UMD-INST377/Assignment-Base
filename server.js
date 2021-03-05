@@ -46,3 +46,5 @@ app.listen(port, () => {
     //do something with data!
   })
   .catch((err) => console.error(err))
+
+res.json({data: json});
