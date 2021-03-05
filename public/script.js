@@ -1,5 +1,7 @@
-
-
+async function windowsActions() {
+    const endpoint = 'https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json';
+    const request = await fetch(endpoint);
+    const arrayName = await request.json();
 
     function findMatches(wordToMatch, restaurants){
         return restaurants.filter(place => {
@@ -36,4 +38,5 @@
         evt.preventDefault();
     });
 
+}
 window.onload = windowActions;
