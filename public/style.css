@@ -11,11 +11,10 @@ html{
 }
 
 .list-item {
-    /* background: yellow; */
     display: block;
-    height: 50px;
-    margin-bottom: 10px;
-    /* background: rgb(2,0,36); */
+    /* height: 150px;
+    width: 300; */
+    margin-bottom: 20px;
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
     color: white;
 }
@@ -27,10 +26,24 @@ h1{
     font-size: xx-large;
     font-weight: thicker;
     text-decoration: underline;
-
-  }
+    margin-top: 20px;
+}
 
 h2{
-    font-weight: thicker;
+    font-weight: bold;
     font-size: large;
+}
+
+.search-form{
+    margin-top: 20px;
+}
+
+.userform{
+    margin-top: 20px;
+}
+
+input#search.city.zip.is-normal{
+    height: 40px;
+    width: 300;
+    margin-bottom: 10px;
 }
