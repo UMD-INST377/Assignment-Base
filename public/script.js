@@ -21,11 +21,16 @@ function toTitleCase(str) {
 async function windowActions() {
   const search = document.querySelector("#search");
   const suggestions = document.querySelector(".suggestions");
+  const form = document.querySelector(".form");
 
   const request = await fetch("/api");
   const results = await request.json();
 
-  search.addEventListener("keyup", (event) => {
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+  });
+
+  search.addEventListener("keyup", () => {
     const matchArray = findMatches(search.value, results);
     const html = matchArray
       .map((location) => {
@@ -34,7 +39,7 @@ async function windowActions() {
           <div class="box column is-half my-4 ml-4"
             <li>
                 <div>
-                  <span class="name">${toTitleCase(location.name)}</span>
+                  <span class="name">${location.name}</span>
                 </div>
                 <div>
                   <span class="category">${location.category}</span>
