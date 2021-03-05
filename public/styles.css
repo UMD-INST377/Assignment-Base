@@ -1,31 +1,42 @@
 @import url(//fonts.googleapis.com/css?family=Open+Sans);
 
 h1 {
-    font-size: 2rem;
-    color : white;
-    font-weight: 30; 
-  }
+  font-size: 2rem;
+  color: white;
+  font-weight: 30;
+  margin-left: 1rem;
+}
 
 body {
-    /* width: 60%;
-    min-width: 900px; */
     padding: 50px 0;
     background-color: #6091C3;
 }
 
-li, .suggestions{
-    background-color: rgb(241, 241, 121);
-    min-width: 100px;
-    margin-left: 80px;
+div li {
+    background-image: linear-gradient(blue, white); 
 }
 /* 
-li, .suggestions {
-    margin-left: 80px; 
+li, .suggestions{
+    background-color: rgb(241, 241, 121);
+    border-radius: 5px;
 } */
 
 li span {
-    align-items: column;
-    border-radius: 5px;
-    flex-wrap: wrap;
+  width: 60%;
+  min-width: 900px;
+  padding: 50px 0;
+}
 
+#search{
+  margin-left: 1rem;
+  width: 570px;
+}
+
+h1, #search {
+    margin-left: 80px;
+}
+
+.suggestions {
+    margin-left: 65px;
+    width: 585px;
 }
