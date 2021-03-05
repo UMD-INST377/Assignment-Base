@@ -25,15 +25,23 @@ h1, #search {
 .suggestions {
     margin-left: 65px;
     width: 585px;
-    background-color: linear-gradient(yellow, white); 
+    /* background-color: linear-gradient(yellow, white);  */
 }
 
 .category, .address, .city, .zip {
     font-style: italic;
 }
 
+.address, .city {
+    text-transform: uppercase;
+}
+
 .name {
     font-size: 25px;
     font-weight: bold;
-    text-transform:uppercase;
+    text-transform: uppercase;
+}
+
+div li {
+    background-color: linear-gradient(yellow, white);
 }
