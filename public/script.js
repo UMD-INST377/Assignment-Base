@@ -14,7 +14,7 @@ fetch('https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json')
 /*async function windowActions() {
    console.log('window loaded');
 const request = await fetch('https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json');
-const places = await request.json([0]);
+const places = await request.json([]);
 };*/
 
 
