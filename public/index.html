@@ -1,10 +1,25 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="stylesheet" href="styles.css" />
+    <title>Saamia Bashir, Julia Escarda, Rida Habib - Assignment 1</title>
 </head>
 <body>
-    Put your app here
+    <div class="container">
+    <h1 class="member-names">Saamia Bashir, Julia Escarda, Rida Habib</h1>
+    <h1 class="assign1">Assignment 1</h1>
+    <form class="userform">
+        <div class="flex-outer">
+        <label for="category">Search</label>
+        <input type="text" id="category" name="category" placeholder="Type of restaurant"></input> 
+        <button type="submit" class="button is-black">Submit</button> <!-- This is using bulma to style the button.-->
+        </div>
+    </form>
+    <ul class="target-list" id='target'></ul>
+    </div>
 </body>
+<script src="script.js"></script>
 </html>
