@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,6 +10,14 @@
 </head>
 
 <body>
+    <form action="/api" method="GET">
+        <ul>
+            <li>
+                <label for="search">Search</label>
+                <input type="text" name="search" id="search">
+            </li>
+        </ul>
+    </form>
 <script>
 
     const endpoint = 'https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json';
