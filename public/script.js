@@ -1,5 +1,6 @@
 
 
+
     function findMatches(wordToMatch, restaurants){
         return restaurants.filter(place => {
             const regex = new RegExp(wordToMatch, 'gi');
