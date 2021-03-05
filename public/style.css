@@ -12,8 +12,6 @@ html{
 
 .list-item {
     display: block;
-    /* height: 150px;
-    width: 300; */
     margin-bottom: 20px;
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
     color: white;
@@ -24,7 +22,7 @@ h1{
     font-family: 'Big Shoulders Display', cursive;
     color: #2a2a2a;
     font-size: xx-large;
-    font-weight: thicker;
+    font-weight: bold;
     text-decoration: underline;
     margin-top: 20px;
 }
@@ -46,4 +44,10 @@ input#search.city.zip.is-normal{
     height: 40px;
     width: 300;
     margin-bottom: 10px;
+}
+
+div.column.is-half.is-centered {
+    flex: none;
+    width: 50%;
+    margin-left: 240;
 }
