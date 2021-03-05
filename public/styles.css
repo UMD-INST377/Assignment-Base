@@ -15,7 +15,7 @@ body {
 
 #search{
   margin-left: 1rem;
-  width: 570px;
+  width: 550px;
 }
 
 h1, #search {
@@ -24,8 +24,11 @@ h1, #search {
 
 .suggestions {
     margin-left: 65px;
-    width: 585px;
-    background-color: linear-gradient(yellow, white); 
+    width: 1100px;
+}
+
+.box{
+    background: linear-gradient(rgb(20, 202, 30), white); 
 }
 
 .category, .address, .city, .zip {

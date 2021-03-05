@@ -34,7 +34,7 @@ async function windowActions() {
           <div class="box column is-half my-4 ml-4"
             <li>
                 <div>
-                  <span class="name">${toTitleCase(location.name)}</span>
+                  <span class="name">${location.name}</span>
                 </div>
                 <div>
                   <span class="category">${location.category}</span>
