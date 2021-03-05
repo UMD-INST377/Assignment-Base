@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -5,45 +6,58 @@
     <title>Assignment 1</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <link rel='stylesheet' type='text/css' href='style.css'>
+    <script src='script.js' charset="utf-8"></script>
 </head>
-<body>
-<script>
-    
-    const endpoint = 'https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json';
-    const restaurants = [];
-    fetch(endpoint)
-        .then(blob => blob.json())
-        .then(data => restaurants.push(...data));
 
-    function findMatches(wordToMatch, restaurants) {
-        return restaurants.filter(place => {
-            const regex = new RegExp(wordToMatch, 'gi');
-            return place.name.match(regex) || place.category.match(regex)
+<body>
+    <form action="/api" method="GET">
+        <ul>
+            <li>
+                <label for="search">Search</label>
+                <input type="text" name="search" id="search">
+            </li>
+        </ul>
+    </form>
+<script>
+    async function windowActions() {
+        const endpoint = 'https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json';
+        const restaurants = [];
+        const request = await fetch(endpoint)
+        const arrayName = await request.json()
+
+
+        function findMatches(wordToMatch, restaurants) {
+            return restaurants.filter(place => {
+                const regex = new RegExp(wordToMatch, 'gi');
+                return place.name.match(regex) || place.category.match(regex)
+            });
+        }
+        function displayMatches(event) {
+            const matchArray = findMatches(event.target.value, restaurants);
+            const html = matchArray.map(place => {
+                const regex = new RegExp(event.target.value, 'gi');
+                const restaurantName = place.name.replace(regex, `<span class = "h1">${event.target.value}</span>`);
+                const restaurantCategory = place.category.replace(regex, `<span class = "h1">${event.target.value}</span>`);
+                return `
+                <li>
+                    <span class = "name">${restaurantName}</span>
+                    <span class = "category">${restaurantCategory}</span>
+                    <span class = "address">${place.address_line_1}</span>
+                    <span class = "city">${place.city}</span>
+                    <span class = "zip">${place.zip}</span>
+                </li>
+            `;
+        }).join('');
+        suggestions.innerHTML = html;
+        }
+        const searchInput = document.querySelector('.search');
+        const suggestions = document.querySelector('.suggestions');
+
+        searchInput.addEventListener('keyup', (evt) => {
+            displayMatches(evt)
         });
     }
-    function displayMatches() {
-        const matchArray = findMatches(this.value, restaurants);
-        const html = matchArray.map(place => {
-            const regex = new RegExp(this.value, 'gi');
-            const restaurantName = place.name.replace(regex, `<span class = "h1">${this.value}</span>`);
-            const restaurantCategory = place.category.replace(regex, `<span class = "h1">${this.value}</span>`);
-            return `
-            <li>
-                <span class = "name">${restaurantName}</span>
-                <span class = "category">${restaurantCategory}</span>
-                <span class = "address">${place.address_line_1}</span>
-                <span class = "city">${place.city}</span>
-                <span class = "zip">${place.zip}</span>
-            </li>
-        `;
-    }).join('');
-    suggestions.innerHTML = html;
-    }
-    const searchInput = document.querySelector('.search');
-    const suggestions = document.querySelector('.suggestions');
-
-    searchInput.addEventListener('change', displayMatches);
-    searchInput.addEventListener('keyup', displayMatches)
+    window.onload = windowActions
 </script>
 </body>
 </html>
