@@ -35,7 +35,10 @@ async function windowsActions() {
 
     const searchInput = document.querySelector('.search');
     const suggestions = document.querySelector('.suggestions');
-    searchInput.addEventListener('keyup', (evt) => {displayMatches(evt)});
+    searchInput.addEventListener('keyup', (evt) => {
+        displayMatches(evt);
+        evt.preventDefault();
+    });
 
 }
 
