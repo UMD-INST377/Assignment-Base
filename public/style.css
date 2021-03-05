@@ -14,8 +14,9 @@ h1 {
     position: relative ;
 }
 
-ul {
-    display:inline;
+.suggestions {
+    position: fixed;
+    right: 30%;
 }
 
 li {
