@@ -3,10 +3,11 @@ body {
 }
 
 h1 {
-    display: block;
+    display:inline;
     font-size: 2em;
     margin-left: 250;
-    font-weight: bold;
+    font-family: 'Poppins', serif;
+    
 }
 
 .userform {
@@ -14,13 +15,28 @@ h1 {
 }
 
 li{
-    background: goldenrod;
+    background: goldenrod; /*search results background color*/
 }
 
 .column-background{
-    background: indianred;
+    background: rgb(247, 148, 148); 
     height: 100px;
 }
 
+.userform {
+    display: block;
+    font-size:medium;
+    margin-left: 250;
+    font-family: 'Poppins', serif;
+    
+}
+
+.target-list{
+    margin-left: 250;
+}
+
+#grad {
+    background-image: linear-gradient(180deg, rgb(194, 167, 245), rgb(134, 181, 235)); /* color gradient detail */
+}
 
 
