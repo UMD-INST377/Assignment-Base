@@ -18,7 +18,7 @@ async function windowActions() {
         const filtered = data.filter((record) => record.zip.toUpperCase() === search.value.toUpperCase());
         filtered.forEach((item) => {
         const appendItem = document.createElement("li");
-        appendItem.innerText = item.zip;
+        appendItem.innerText = item.category;
         targetList.append(appendItem);
     });
 });
@@ -30,33 +30,36 @@ search.addEventListener('input', (event) => {
 
 // code below is from tutorial
          
-function findMatches(wordToMatch, zips) {
-    return zips.filter(place => {
+function findMatches(wordToMatch, zip) {
+    return data.filter(place => {
     // here we need to figure out if the zip matches what was searched
     const regex = new RegExp(wordToMatch, 'gi')
-    return place.zip.match(regex)
+    return place.zipcode.match(regex)
 });
 }
-
 function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 }
 
 // need to remove the "this" value 
 function displayMatches() {
-    const matchArray = findMatches(this.value, zips);
+    const matchArray = findMatches(this.value, zip);
     const html = matchArray.map(place => {
-        const regex = new RegExp(this.value, 'gi');
-        const zipCode = place.zip.replace(regex, '<span class="h1">${this.value}</span>');
-        const restaurantName = place.name.replace(regex, '<span class="h1">${this.value}</span>');
-        const restaurantAddress = place.address_line_1.replace(regex, '<span class="h1">${this.value}</span>');
-        const restaurantCategory = place.category.replace(regex, '<span class="h1">${this.value}</span>');
+        const regex = new RegExp(thiis.value, 'gi');
+        const zipCode = place.zip.replace(regex, '<span class="h1">${search.value}</span>');
+        const restaurantName = place.name.replace(regex, '<span class="h1">${search.value}</span>');
+        const restaurantAddress = place.address_line_1.replace(regex, '<span class="h1">${search.value}</span>');
+        const restaurantCategory = place.category.replace(regex, '<span class="h1">${search.value}</span>');
 
-        return '<li><span class="name">${restaurantName, restaurantAddress, restaurantCategory}</span></li>';
+        return `
+        <li>
+        <span class="name">${restaurantName}</span><
+        <span class="address">${restaurantAddress}</span>
+        <span class="category">${restaurantCategory}</span>
+        </li>`;
     }).join('');
     suggestions.innerHTML = html;
 }
-
 const searchInput = document.querySelector('.search');
 const suggestions = document.querySelector('.suggestions');
          
