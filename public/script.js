@@ -9,8 +9,11 @@ async function windowActions() {
 
     form.addEventListener('submit', async (event) => {
         event.preventDefault();
-        console.log('submit fired', search.value);
-        const filtered = data.filter((record) => record.zip === search.value);
+        console.log('submit fired', event.target.value);
+        const filtered = data.filter((record) => {
+            const regex = new RegExp(event.target.value, 'gi');
+            return record.zip.match(regex);
+        });
         
         filtered.forEach(restaurant => {
             const newItem = document.createElement('li');
@@ -32,7 +35,5 @@ async function windowActions() {
 
 search.addEventListener('change', search.filtered);
 search.addEventListener('keyup', search.filtered);
-
 };
-
 window.onload = windowActions;
