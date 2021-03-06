@@ -30,8 +30,8 @@ async function windowActions() {
         console.log('input', event.target.value);
 });
 
-const searchInput = document.querySelector('.search');
-const suggestions = document.querySelector('.suggestions');
+search.addEventListener('change', search.filtered);
+search.addEventListener('keyup', search.filtered);
 
 };
 
