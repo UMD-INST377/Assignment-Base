@@ -4,7 +4,7 @@ async function windowActions() {
     const search = document.querySelector('#zipcode')
     const targetList = document.querySelector('.target-list');
 
-    const request = await fetch('/api');
+    const request = await fetch('https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json');
     const data = await request.json();
 
     form.addEventListener('submit', async (event) => {
@@ -14,17 +14,18 @@ async function windowActions() {
             const regex = new RegExp(event.target.value, 'gi');
             return record.zip.match(regex);
         });
-        
+
+        // filter through each restaurant to add its name, cat, add, and zip into the list
         filtered.forEach(restaurant => {
             const newItem = document.createElement('li');
             newItem.classList.add('list-item');
             newItem.innerHTML = `
-            <h1>${restaurant.name}<h1>
-            <h2>${restaurant.category}<h2>
+            <h2>${restaurant.name}</h2>
+            <h3>${restaurant.category}</h3>
             ${restaurant.address_line_1}
             ${restaurant.zip}
             `;
-            targetList.append(newItem)
+            targetList.append(newItem);
     });  
 })   
 
