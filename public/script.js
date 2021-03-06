@@ -36,7 +36,7 @@ async function windowsActions() {
         return `
             <li>
                 <span class="name>${cityName}, ${stateName}</span>
-                <span class="population">${numberWithCommas(place.name)}</span>
+                <span class="population">${place.name}</span>
             <li>
         `;
     }).join('');
