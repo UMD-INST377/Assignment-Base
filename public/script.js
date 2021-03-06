@@ -1,39 +1,45 @@
+
 async function windowActions() {
     console.log('window loaded');
     const form = document.querySelector('.userform');
     const search = document.querySelector('#zipcode')
     const targetList = document.querySelector('.target-list');
-
-    const request = await fetch('/api');
+    
+    const request = await fetch(endpoint);
     const data = await request.json();
 
-    form.addEventListener('submit', async (event) => {
-        event.preventDefault();
-        console.log('submit fired', event.target.value);
-        const filtered = data.filter((record) => {
-            const regex = new RegExp(event.target.value, 'gi');
-            return record.zip.match(regex);
+    fetch(endpoint)
+        .then(blob => blob.json())
+        .then(data => cities.push(...data))
+
+    function findMatches(wordToMatch, cities) {
+        return cities.filter(place => {
+            const regex = new RegExp(wordToMatch, 'gi');
+            return place.city.match(regex)
         });
-        
-        filtered.forEach(restaurant => {
-            const newItem = document.createElement('li');
-            newItem.classList.add('list-item');
-            newItem.innerHTML = `
-            <h1>${restaurant.name}<h1>
-            <h2>${restaurant.category}<h2>
-            ${restaurant.address_line_1}
-            ${restaurant.zip}
-            `;
-            targetList.append(newItem)
-    });  
-})   
+    }
+    
+    function displayMatches(function displayMatches(event)) {
+    const matchArray = findMatches(event.target.value, cities);
+    const html = matchArray.map(place => {
+        const regex = new RegExp(this.value, 'gi');
+        const cityName = place.city.replace(regex, `<span class="h1">${this.
+            value}</span>`);
+        return `
+            <li>
+            <span class="name">${cityName}</span>
+            <span class="population">${place.population}</span>
+            </li>
+        `;
+    }).join('');
+    suggestions.innerHTML = html;
+    }
 
-// this listens for typing into the input box
-    search.addEventListener('input', (event) => {
-        console.log('input', event.target.value);
-});
+    const searchInput = document.querySelector('.search');
+    const suggestions = document.querySelector('.suggestions');
 
-search.addEventListener('change', search.filtered);
-search.addEventListener('keyup', search.filtered);
-};
-window.onload = windowActions;
+    searchInput.addEventListener('change', displayMatches);
+    searchInput.addEventListener('keyup', (evt)=>{displayMatches(evt)}));
+
+
+}
