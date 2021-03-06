@@ -39,5 +39,9 @@
 .suggestion {
     background-color: blueviolet;
     display: block;
-    margin: 40px;
+    margin: 10px;
+}
+
+h1 {
+    text-align: center;
 }
