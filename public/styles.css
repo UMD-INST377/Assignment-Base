@@ -13,12 +13,11 @@ body {
     display: flex;
     
 }
-h1 {
-  text-size-adjust: 80%;
+div h1 {
+  font-size: 40px;
   text-align: center;
   text-decoration: underline;
   font-family: "IBM Plex Sans", sans-serif;
-  font-weight: bold;
   line-height: 100px;
 }
  
