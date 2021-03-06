@@ -39,12 +39,3 @@ app.route('/api')
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}!`);
 });
-
-.fetch('https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json')
-  .then((data) => data.json())
-  .then((data2) => {
-    //do something with data!
-  })
-  .catch((err) => console.error(err))
-
-res.json({data: json});
