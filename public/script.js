@@ -14,7 +14,7 @@ function findMatches(wordToMatch, restaurants) {
 }
 
 function displayMatches() {
-  const matchedArray = findMatches(this.value, restaurants);
+  const matchedArray = findMatches(this.value, rtype);
   const html = matchedArray.map(rtype => {
     return `
       <li>
@@ -29,4 +29,5 @@ function displayMatches() {
 
 const searchInput = document.querySelector(".search");
 const suggestions = document.querySelector(".suggestions");
+
 searchInput.addEventListener("input", displayMatches);
