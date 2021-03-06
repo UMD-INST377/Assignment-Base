@@ -1,28 +1,32 @@
+async function windowActions {
 const endpoint =
   "https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json";
 
-const rtype = [];
-fetch(endpoint)
+
+const request = await fetch(endpoint)
+const rtype = await request.json();
   .then(blob => blob.json())
   .then(data => rtype.push(...data));
 
-function findMatches(wordToMatch, restaurants) {
-  return restaurants.filter(rtype => {
+function findMatches(wordToMatch, rtype) {
+  return rtype.filter(rtype => {
     const regex = new RegExp(wordToMatch, "gi");
-    return rtype.name.match(regex);
+    return rtype.category.match(regex) || rtype.city.match(regex);
   });
 }
 
-function displayMatches() {
-  const matchedArray = findMatches(this.value, rtype);
+function displayMatches(event) {
+  const matchedArray = findMatches(event.target.value, rtype);
   const html = matchedArray.map(rtype => {
+    const regex = new RegExp(event.target.value, "gi");
+    const catHigh = rtype.category.replace(regex, `<span class='hl'>${event.target.value}</span>`);
     return `
       <li>
-      <span class="name">${rtype.category}</span>
+      <span class="name">${rtype.name},${catHigh}</span>
       <span class="statecode">${rtype.city}</span>
       </li>
       `;
-  });
+  }).join('');
 
   suggestions.innerHTML = html;
 }
@@ -30,4 +34,7 @@ function displayMatches() {
 const searchInput = document.querySelector(".search");
 const suggestions = document.querySelector(".suggestions");
 
-searchInput.addEventListener("input", displayMatches); 
+searchInput.addEventListener("change", displayMatches); 
+searchInput.addEventListener("keyup", (evt) => { displayMatches(evt) });
+}
+window.onload = windowActions;
