@@ -31,7 +31,13 @@
 
 
 .suggestions {
-    background-color: blueviolet;
-    display:inline-block;
+    display: inline-block;
     text-align: center;
+    margin: 10px;
+}
+
+.suggestion {
+    background-color: blueviolet;
+    display: block;
+    margin: 40px;
 }
