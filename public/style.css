@@ -9,17 +9,14 @@
 }
 
 .second {
-    background: lightseagreen;
+    background: lightblue;
     height: 500px;
     width: 500px;
 }
 
-/* .container {
-    margin: 960px;
-} */
 
 .button.is-primary {
-    background: red;
+    background: rgb(9, 110, 136);
 }
 
 .column-background {
@@ -38,5 +35,5 @@
 .target-list {
     margin-top: 50px;
     margin: 40px ;
-    background: red;
+    background: white;
 }
