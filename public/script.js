@@ -12,10 +12,12 @@ async function windowActions() {
         console.log('submit fired', event.target.value);
         const filtered = data.filter((record) => {
             const regex = new RegExp(event.target.value, 'gi');
-            return record.zip.match(regex);
-        });
-
-        // filter through each restaurant to add its name, cat, add, and zip into the list
+            return record.zip.match(regex)
+        })
+        displayMatches(event);
+        ;
+        
+        // filter through each restaurant to add its name, cat, add, and zip into the target list
         function displayMatches() {
             filtered.forEach(restaurant => {
                 const newItem = document.createElement('li');
@@ -28,17 +30,19 @@ async function windowActions() {
                 `;
                 targetList.append(newItem);
             }); 
-        }
-    })   
-
+        };
+    })
+    
     // this listens for typing into the input box
     search.addEventListener('input', (event) => {
         console.log('input', event.target.value);
     });
-    
-    search.addEventListener('change', displayMatches);
+
+    search.addEventListener('change', displayMatches());
     search.addEventListener('keyup', (event) => {
         displayMatches(event);
     })
+
 };
+
 window.onload = windowActions;
