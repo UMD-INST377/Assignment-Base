@@ -7,7 +7,7 @@ const endpoint =
 const request = await fetch(endpoint)
   .then(blob => blob.json())
   .then(data => rtype.push(...data));
-  const rtype = await request.json();
+const rtype = await request.json();
 function findMatches(wordToMatch, rtype) {
   return rtype.filter(rtype => {
     const regex = new RegExp(wordToMatch, "gi");
@@ -23,7 +23,11 @@ function displayMatches(event) {
     return `
       <li>
       <span class="name">${rtype.name},${catHigh}</span>
-      <span class="statecode">${rtype.address_line_1},${rtype.address_line_1},${rtype.city}${rtype.zip}</span>
+      
+      <span class="statecode">${rtype.address_line_1},
+      ${rtype.address_line_1},
+      ${rtype.city}${rtype.zip}
+      </span>
       
       </li>
       `;
