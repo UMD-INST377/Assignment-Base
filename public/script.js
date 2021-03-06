@@ -3,45 +3,31 @@ async function windowActions() {
     console.log('window loaded');
     const form = document.querySelector('.userform');
     const search = document.querySelector('#zipcode')
-    const targetList = document.querySelector('.target-list');
-    
-    const request = await fetch(endpoint);
-    const data = await request.json();
-
-    fetch(endpoint)
-        .then(blob => blob.json())
-        .then(data => cities.push(...data))
-
-    function findMatches(wordToMatch, cities) {
-        return cities.filter(place => {
-            const regex = new RegExp(wordToMatch, 'gi');
-            return place.city.match(regex)
-        });
-    }
-    
-    function displayMatches(function displayMatches(event)) {
-    const matchArray = findMatches(event.target.value, cities);
-    const html = matchArray.map(place => {
-        const regex = new RegExp(this.value, 'gi');
-        const cityName = place.city.replace(regex, `<span class="h1">${this.
-            value}</span>`);
-        return `
-            <li>
-            <span class="name">${cityName}</span>
-            <span class="population">${place.population}</span>
-            </li>
-        `;
-    }).join('');
-    suggestions.innerHTML = html;
-    }
-
-    const searchInput = document.querySelector('.search');
     const suggestions = document.querySelector('.suggestions');
     
+    const request = await fetch('https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json');
+    const data = await request.json();
 
-    searchInput.addEventListener('change', displayMatches);
-    searchInput.addEventListener('keyup', (evt)=>{displayMatches(evt)}));
+    search.addEventListener('input', (event)=>{
+        console.log('input', event.target.value)
+        const display = data.filter(record) =>{
+            return record.city.toUpperCase().includes(event.target.value.toUpperCase() || record.zip.includes(event.target.value);
+        });
 
+        display.forEach(restaurant => {
+            const newItem = document.createdElement('li');
+            newItem.classList.add('list-item');
+            newItem.innerHTML = `
+            ${restaurant.name}
+            ${restaurant.category}
+            ${restaurant.address_line_1}
+            ${restaurant.city}
+            ${restaurant.zip}
+            `:
 
-}
+            suggestions.append(newItem);
+        });
+    })
+                                                                                                                                                                                       
+};
 window.onload = windowActions;
