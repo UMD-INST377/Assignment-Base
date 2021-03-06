@@ -14,7 +14,7 @@ async function windowActions() {
             const regex = new RegExp(event.target.value, 'gi');
             return record.zip.match(regex)
         })
-        displayMatches(event);
+        displayMatches(event.target.value);
         ;
         
         // filter through each restaurant to add its name, cat, add, and zip into the target list
@@ -38,7 +38,7 @@ async function windowActions() {
         console.log('input', event.target.value);
     });
 
-    search.addEventListener('change', displayMatches());
+    search.addEventListener('change', displayMatches);
     search.addEventListener('keyup', (event) => {
         displayMatches(event);
     })
