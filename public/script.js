@@ -23,7 +23,8 @@ function displayMatches(event) {
     return `
       <li>
       <span class="name">${rtype.name},${catHigh}</span>
-      <span class="statecode">${rtype.city}</span>
+      <span class="statecode">${rtype.address_line_1},${rtype.address_line_1},${rtype.city}${rtype.zip}</span>
+      
       </li>
       `;
   }).join('');
