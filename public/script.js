@@ -24,17 +24,21 @@ async function windowsActions() {
 
     // Displays a list of restaurants that matches key word/phrase when an event happens
     function displayMatches(event){
+    console.log(event.target.value);
     const matchArray = findMatches(event.target.value, restaurants);
-    // Creates and displays a list of restaurants metadata of interest that fit the search criteria of the 
-    // matched word/phrase
-    const html = matchArray.map(place => {
-        const regex = new RegExp(event.target.value, 'gi');
-        const cityName = place.city.replace(regex, 
-            `<span class="hl">${event.target.value}</span>`);    
-        return `
-            <li>
-                <span class="cityName>${cityName} ${' '} ${place.name}</span>
-            <li>
+    const html = matchArray.map(places => {
+      const regex = new RegExp(event.target.value, 'gi') ;
+      const placeName = places.name.replace(regex, `<span class="hl">						${event.target.value}</span>`);
+      const placeAddress = places.address_line_1.replace(regex, `<span 					 class="hl">${event.target.value}</span>`);
+      const placeCity = places.city.replace(regex, `<span class="hl">						${event.target.value}</span>`);
+
+      return  `
+        <li>
+            <span class= "title">${placeName}</span>
+            <span class= "address">${placeAddress}, 
+            	${placeCity}</span>
+            <span class= "category">${places.category}</span>
+        </li>
         `;
     }).join('');
     suggestions.innerHTML = html;
