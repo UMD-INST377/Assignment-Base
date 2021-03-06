@@ -5,7 +5,7 @@ async function windowActions() {
     const search = document.querySelector('#zipcode')
     const suggestions = document.querySelector('.suggestions');
     
-    const request = await fetch('https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json');
+    const request = await fetch('/api');
     const data = await request.json();
 
     search.addEventListener('input', (event)=>{
@@ -28,6 +28,8 @@ async function windowActions() {
             suggestions.append(newItem);
         });
     })
-                                                                                                                                                                                       
+                                                                                                  
+    
 };
+
 window.onload = windowActions;
