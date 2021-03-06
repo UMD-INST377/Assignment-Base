@@ -1,21 +1,15 @@
-h1, h2, h3 {
-    line-height: 1.2;
+.body {
+    margin: 960px;
 }
 
 .main {
-    background: red;
-    height: 150px;
-    width: 150px;
-}
-
-.second {
-    background: lightseagreen;
-    height: 50px;
-    width: 50px;
+    background: lightblue;
+    height: 960px;
+    width: 960px;
 }
 
 .button.is-primary {
-    background: red;
+    background: rgb(9, 110, 136);
 }
 
 .column-background {
@@ -23,6 +17,16 @@ h1, h2, h3 {
     height: 100px;
 }
 
+.ul {
+    margin: auto;
+}
+
 .li {
     background: yellow;
+}
+
+.target-list {
+    margin-top: 50px;
+    margin: 40px ;
+    background: white;
 }
