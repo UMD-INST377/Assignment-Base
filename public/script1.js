@@ -23,42 +23,54 @@ async function windowActions(){
 }
 window.onload=windowActions;
 */
+async function windowsActions() {
+    console.log('window loaded')
+    const endpoint = 'https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json';
+    const request = await fetch(endpoint);
+    const data = await request.json();
 
+    function findMatches(wordToMatch, data){
+        console.log('find matches')
+        return data.filter(place => {
+            const regex = new RegExp(wordToMatch, 'gi');
+            return place.category.match(regex) || place.name.match(regex);
+            
+        });
+    }
 
-async function windowActions(){
-const endpoint = 'https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json';
-const request = await fetch(endpoint);
-const arrayName = await request.json();
+    function displayMatches(event){
+        console.log('display')
+        const matchArray = findMatches(event.target.value, data);
+        const html = matchArray.map(place => {
+            const regex = new RegExp(event.target.value, 'gi');
+            const restName = place.name;
 
-function findMatches(wordToMatch, restaurants){
-    return restaurants.filter(place =>{
-    
-    const regex = new RegExp(wordToMatch, 'gi');
-    return place.city.match(regex) || place.state.match(regex)
-    });
-}
+            return `
+                <div class="box1">
 
-function displayMatches(){
-    const matchArray = findMatches(event.target.value, restaurants);
-    const html = matchArray.map(place => {
-        const regex = new RegExp(event.target.value, 'gi');
-        const categoryName = place.category.replace(regex, '<span class = "h1" > ${event.target.value}</span>')
-        
-        return `
-        <li> 
-            <span class = "name" >${categoryName}</span>
-            <span class = "category" >${place.category}</span>
-        </li>
-        `;  
-    }).join('');
-    suggestions.innerHTML = html;
+                    <div class ="hl">${restName}</div>
+                    <div class ="address1">${place.address_line_1}</div>
+                    <div class="address2">${place.address_line_2}</div>
+                    <div class="city">${place.city}</div>
+                    <div class="state">${place.state}</div>
+                    <div class="zipcode">${place.zip}</div>
+                    <div class="category">${place.category}</div>
+                  
+                </div>
+            `;
+        }).join('');
+        suggestions.innerHTML = html;
+    }
 
-}
-const searchInput = document.querySelector('.search');
+    const searchInput = document.querySelector('.userform');
     const suggestions = document.querySelector('.suggestions');
     
-    
     searchInput.addEventListener('change', displayMatches);
-    searchInput.addEventListener('keyup', displayMatches);
+    searchInput.addEventListener('keyup', (evt) => {
+        evt.preventDefault()
+        displayMatches(evt)
+    });
+    
 }
 
+window.onload = windowsActions;

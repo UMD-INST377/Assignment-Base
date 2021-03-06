@@ -18,19 +18,17 @@ async function windowsActions() {
         const matchArray = findMatches(event.target.value, data);
         const html = matchArray.map(place => {
             const regex = new RegExp(event.target.value, 'gi');
-            const CategoryName = place.category.replace(regex, 
-                `<span class="hl">${event.target.value}</span>`);
-            const RestName = place.name.replace(regex, 
-                `<span class="hl">${event.target.value}</span>`);
+            const restName = place.name; 
+
             return `
                 <li>
-                    <span class="name">${CategoryName}, ${RestName}</span>
-                    <span class="address">${place.address_line_1}</span>
-                    <span class="address">${place.address_line_2}</span>
-                    <span class="city">${place.city}</span>
-                    <span class="state">${place.state}</span>
-                    <span class="zipcode">${place.zip}</span>
-                    <span class="category">${place.category}</span>
+                    <div class ="hl">${restName}</div>
+                    <div class ="address1">${place.address_line_1}</div>
+                    <div class="address2">${place.address_line_2}</div>
+                    <div class="city">${place.city}</div>
+                    <div class="state">${place.state}</div>
+                    <div class="zipcode">${place.zip}</div>
+                    <div class="category">${place.category}</div>
                 <li>
             `;
         }).join('');
