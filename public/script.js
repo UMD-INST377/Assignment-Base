@@ -21,15 +21,16 @@ async function windowsActions() {
             const restName = place.name; 
 
             return `
-                <li>
-                    <div class ="hl">${restName}</div>
-                    <div class ="address1">${place.address_line_1}</div>
-                    <div class="address2">${place.address_line_2}</div>
-                    <div class="city">${place.city}</div>
-                    <div class="state">${place.state}</div>
-                    <div class="zipcode">${place.zip}</div>
-                    <div class="category">${place.category}</div>
-                <li>
+            <div class="box1">
+                <li>${restName}<br>
+                ${place.address_line_1}<br>
+                ${place.address_line_2}<br>
+                ${place.city}
+                ${place.state}
+                ${place.zip}<br>
+                ${place.category}
+                </li>
+            </div>
             `;
         }).join('');
         suggestions.innerHTML = html;

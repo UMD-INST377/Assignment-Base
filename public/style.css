@@ -28,7 +28,7 @@ body {
 
 h1 {
     margin-bottom: 10px;
-    font-size: 3em;
+    font-size: 2em;
     font-family: 'Poppins', serif;
     text-align: center;
     
@@ -40,10 +40,10 @@ h1 {
     margin-left: 250;
 }
 
-li {
+.box1 {
     margin-left: 250;
     margin: 10px;
-    display: flex;
+    display: block;
     list-style-position: inside;
     align-items: center;
     justify-content: center;
@@ -63,23 +63,23 @@ li {
     box-sizing: border-box;
   }
 
-.flex-outer > li:not(:last-child) {
+.flex-outer > .box1:not(:last-child) {
     margin-bottom: 20px;
   }
 
-.flex-outer li label,
-.flex-outer li p {
+.flex-outer .box1 label,
+.flex-outer .box1 p {
     padding: 8px;
     font-weight: 300;
     letter-spacing: .09em; 
   }
 
-.flex-outer>li>label, .flex-outer li p{
+.flex-outer>.box1>label, .flex-outer .box1 p{
     flex: 1 0 120px;
     max-width: 220px;
 }
 
-.flex-outer>li>label + *, .flex-inner{
+.flex-outer>.box1>label + *, .flex-inner{
     flex: 1 0 220px;
 }
 
@@ -94,7 +94,7 @@ li {
     margin: 0 auto;
   }
 
-.flex-outer li, .flex-inner{
+.flex-outer .box1, .flex-inner{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -121,7 +121,7 @@ li {
 
 
 
-#grad li{
+#grad .box1{
     background-image: linear-gradient(180deg, rgb(194, 167, 245), rgb(134, 181, 235)); /* color gradient detail */ 
 }
 
