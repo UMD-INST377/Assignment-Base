@@ -17,7 +17,7 @@ async function windowActions() {
     const html = matchArray
       .map((place) => {
         return `
-            <li>
+            <li class = "suggestion">
                 <span class = "name">${place.name}</span>
                 <span class = "category">${place.category}</span>
                 <span class = "address">${place.address_line_1}</span>
