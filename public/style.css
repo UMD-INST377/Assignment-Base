@@ -26,4 +26,12 @@
     flex-grow: 1;
     flex-shrink: 1;
     padding: .75rem;
+    text-align: center;
+}
+
+
+.suggestions {
+    background-color: blueviolet;
+    display:inline-block;
+    text-align: center;
 }
