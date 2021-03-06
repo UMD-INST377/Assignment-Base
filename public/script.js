@@ -15,7 +15,7 @@ async function windowActions() {
         };
 
         // filter through each restaurant to add its name, cat, add, and zip into the list
-        function displayMatches(function displayMatches((evt) =>)) {
+        function displayMatches(function displayMatches(event)) {
             filtered.forEach(restaurant => {
                 const newItem = document.createElement('li');
                 newItem.classList.add('list-item');
