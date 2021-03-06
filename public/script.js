@@ -23,8 +23,8 @@ async function windowActions() {
                 const newItem = document.createElement('li');
                 newItem.classList.add('list-item');
                 newItem.innerHTML = `
-                <h2>${restaurant.name}</h2>
-                <h3>${restaurant.category}</h3>
+                <h1><strong>${restaurant.name}</strong></h1>
+                <h2><em>${restaurant.category}</em></h2>
                 ${restaurant.address_line_1}
                 ${restaurant.zip}
                 `;
