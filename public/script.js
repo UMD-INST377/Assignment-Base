@@ -16,27 +16,29 @@ async function windowActions() {
         });
 
         // filter through each restaurant to add its name, cat, add, and zip into the list
-        filtered.forEach(restaurant => {
-            const newItem = document.createElement('li');
-            newItem.classList.add('list-item');
-            newItem.innerHTML = `
-            <h2>${restaurant.name}</h2>
-            <h3>${restaurant.category}</h3>
-            ${restaurant.address_line_1}
-            ${restaurant.zip}
-            `;
-            targetList.append(newItem);
-    });  
-})   
+        function displayMatches() {
+            filtered.forEach(restaurant => {
+                const newItem = document.createElement('li');
+                newItem.classList.add('list-item');
+                newItem.innerHTML = `
+                <h2>${restaurant.name}</h2>
+                <h3>${restaurant.category}</h3>
+                ${restaurant.address_line_1}
+                ${restaurant.zip}
+                `;
+                targetList.append(newItem);
+            }); 
+        }
+    })   
 
-// this listens for typing into the input box
+    // this listens for typing into the input box
     search.addEventListener('input', (event) => {
         console.log('input', event.target.value);
-});
-
-searchInput.addEventListener('change', displayMatches);
-searchInput.addEventListener('keyup', (event) => {
-    displayMatches(event);
-})
+    });
+    
+    search.addEventListener('change', displayMatches);
+    search.addEventListener('keyup', (event) => {
+        displayMatches(event);
+    })
 };
 window.onload = windowActions;
