@@ -1,0 +1,19 @@
+body {
+    width: 60%;
+    max-width: 900px;
+    padding: 50px 0;
+    background-color: purple;
+  }
+
+ li, .suggestions {
+
+    background-color: blue;
+    min-width: 100px;
+    margin-left: 80px;
+  }
+
+  li span{
+      align-items: column;
+      border-radius: 5px;
+      flex-wrap: wrap;
+  }
