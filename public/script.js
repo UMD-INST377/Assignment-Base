@@ -18,7 +18,7 @@ function displayMatches() {
   const html = matchedArray.map(rtype => {
     return `
       <li>
-      <span class="name">${rtype.name}</span>
+      <span class="name">${rtype.category}</span>
       <span class="statecode">${rtype.city}</span>
       </li>
       `;
