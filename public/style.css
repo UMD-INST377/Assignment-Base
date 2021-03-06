@@ -1,0 +1,32 @@
+.body {
+    margin: 960px;
+}
+
+.main {
+    background: lightblue;
+    height: 960px;
+    width: 960px;
+}
+
+.button.is-primary {
+    background: rgb(9, 110, 136);
+}
+
+.column-background {
+    background: goldenrod;
+    height: 100px;
+}
+
+.ul {
+    margin: auto;
+}
+
+.li {
+    background: yellow;
+}
+
+.target-list {
+    margin-top: 50px;
+    margin: 40px ;
+    background: white;
+}
