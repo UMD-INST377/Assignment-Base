@@ -67,19 +67,19 @@ h1 {
     margin-bottom: 20px;
   }
 
-.flex-outer .box1 label,
-.flex-outer .box1 p {
+.flex-outer .box1 label, .box1 .rname
+.flex-outer .box1 li {
     padding: 8px;
     font-weight: 300;
     letter-spacing: .09em; 
   }
 
-.flex-outer>.box1>label, .flex-outer .box1 p{
+.flex-outer>.box1>label, .flex-outer .box1 .rname{
     flex: 1 0 120px;
     max-width: 220px;
 }
 
-.flex-outer>.box1>label + *, .flex-inner{
+.flex-outer>.box1>.rname>label + *, .flex-inner{
     flex: 1 0 220px;
 }
 
@@ -94,7 +94,7 @@ h1 {
     margin: 0 auto;
   }
 
-.flex-outer .box1, .flex-inner{
+.flex-outer .box1, .flex-inner .rname{
     display: flex;
     flex-wrap: wrap;
     align-items: center;

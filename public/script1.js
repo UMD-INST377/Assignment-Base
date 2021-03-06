@@ -48,14 +48,13 @@ async function windowsActions() {
 
             return `
                 <div class="box1">
-                    <li>${restName}<br>
+                    ${restName}<br>
                     ${place.address_line_1}<br>
                     ${place.address_line_2}<br>
                     ${place.city}
                     ${place.state}
                     ${place.zip}<br>
                     ${place.category}
-                    </li>
                 </div>
             `;
         }).join('');
