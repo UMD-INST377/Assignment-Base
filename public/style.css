@@ -1,0 +1,28 @@
+h1, h2, h3 {
+    line-height: 1.2;
+}
+
+.main {
+    background: red;
+    height: 150px;
+    width: 150px;
+}
+
+.second {
+    background: lightseagreen;
+    height: 50px;
+    width: 50px;
+}
+
+.button.is-primary {
+    background: red;
+}
+
+.column-background {
+    background: goldenrod;
+    height: 100px;
+}
+
+.li {
+    background: yellow;
+}

@@ -1,52 +1,39 @@
-const endpoint = 'https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json';
-const zips = [];
-         
-fetch(endpoint)
-    .then(blob => blob.json())
-    .then(data => zips.push(...data))
-         
-function findMatches(wordToMatch, zips) {
-    return zips.filter(place => {
-    // here we need to figure out if the zip matches what was searched
-    const regex = new RegExp(wordToMatch, 'gi')
-    return place.zip.match(regex)
-});
-}
-
-function numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-}
-         
-function displayMatches() {
-    const matchArray = findMatches(this.value, zips);
-    const html = matchArray.map(place => {
-        const regex = new RegExp(this.value, 'gi');
-        const zipCode = place.zip.replace(regex, '<span class="h1">${this.value}</span>');
-        const restaurantName = place.name.replace(regex, '<span class="h1">${this.value}</span>');
-        const restaurantAddress = place.address_line_1.replace(regex, '<span class="h1">${this.value}</span>');
-        const restaurantCategory = place.category.replace(regex, '<span class="h1">${this.value}</span>');
-
-        return '<li><span class="name">${restaurantName, restaurantAddress, restaurantCategory}</span></li>';
-    }).join('');
-    suggestions.innerHTML = html;
-}
-
-const searchInput = document.querySelector('.search');
-const suggestions = document.querySelector('.suggestions');
-         
-searchInput.addEventListener('change', displayMatches);
-searchInput.addEventListener('keyup', displayMatches);
-
-
 async function windowActions() {
+    console.log('window loaded');
     const form = document.querySelector('.userform');
-    const search = document.querySelector('#zipcode');
+    const search = document.querySelector('#zipcode')
+    const targetList = document.querySelector('.target-list');
 
-        form.addEventListener('submit')
+    const request = await fetch('/api');
+    const data = await request.json();
 
+    form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        console.log('submit fired', event.target.value);
+        const filtered = data.filter((record) => {
+            const regex = new RegExp(event.target.value, 'gi');
+            return record.zip.match(regex);
+        });
+        
+        filtered.forEach(restaurant => {
+            const newItem = document.createElement('li');
+            newItem.classList.add('list-item');
+            newItem.innerHTML = `
+            <h1>${restaurant.name}<h1>
+            <h2>${restaurant.category}<h2>
+            ${restaurant.address_line_1}
+            ${restaurant.zip}
+            `;
+            targetList.append(newItem)
+    });  
+})   
+
+// this listens for typing into the input box
     search.addEventListener('input', (event) => {
         console.log('input', event.target.value);
-    });
-}
+});
 
+search.addEventListener('change', search.filtered);
+search.addEventListener('keyup', search.filtered);
+};
 window.onload = windowActions;
