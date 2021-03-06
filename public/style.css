@@ -1,0 +1,27 @@
+body {
+    background: lightblue;
+}
+
+.container {
+    width: 960px;
+    background-color: lightblue;
+}
+
+.box {
+    margin: 15px;
+}
+
+.input {
+    margin: 10px;
+    width: 500px;
+}
+
+.label {
+    margin: 10px;
+}
+
+.button.is-primary {
+    color: black;
+    background-color: lightblue;
+    margin-top: 10px;
+}
