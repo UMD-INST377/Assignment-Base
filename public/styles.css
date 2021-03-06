@@ -1,17 +1,21 @@
 body {
-  padding: 0;
+  padding: 50px 0;
   background-color: rgb(109, 233, 233);
+  margin: 0px;
 }
 
 .container {
-    width: 950px;
+    max-width: 940px;
+    min-height: 100%;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    display: flex;
+    
 }
 h1 {
-    font-size: 40px;
+  font-size: 40px;
   text-align: center;
-  margin-top: auto;
-  padding-top: 20px;
-  padding-bottom: 20px;
   text-decoration: underline;
   font-family: "IBM Plex Sans", sans-serif;
   font-weight: bold;
@@ -37,27 +41,19 @@ input.search {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.19);
 }
 
-
 .suggestions {
   margin: 0;
   padding: 0;
   position: relative;
-
 }
 
 .suggestions li {
-background: rgb(199, 199, 199);
+  background: rgb(199, 199, 199);
   list-style: none;
-  border-bottom: 1px solid #969292;
+  border-bottom: 1px solid #726d6d;
   margin: 10px;
   padding: 10px;
   display: flex;
   justify-content: space-between;
   text-transform: capitalize;
-}
-
-li {
-    background: linear-gradient(180deg, rgb(136, 184, 241) 0%, rgb(4, 93, 196) 95%);
-  
-
 }
