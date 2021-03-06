@@ -11,9 +11,9 @@ async function windowsActions() {
         return restaurants.filter(place => {
             // Here we need to figure out if the restaurant matches our search criteria
             // Search criteria:
-            // City, State
+            // City
             const regex = new RegExp(wordToMatch, 'gi');
-            return place.city.match(regex) || place.state.match(regex);
+            return place.city.match(regex);
         });
     }
 
@@ -30,13 +30,10 @@ async function windowsActions() {
     const html = matchArray.map(place => {
         const regex = new RegExp(event.target.value, 'gi');
         const cityName = place.city.replace(regex, 
-            `<span class="hl">${event.target.value}</span>`);
-        const stateName = place.state.replace(regex, 
-            `<span class="hl">${event.target.value}</span>`);     
+            `<span class="hl">${event.target.value}</span>`);    
         return `
             <li>
-                <span class="name>${cityName}, ${stateName}</span>
-                <span class="population">${place.name}</span>
+                <span class="cityName>${cityName} ${' '} ${place.name}</span>
             <li>
         `;
     }).join('');
