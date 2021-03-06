@@ -34,7 +34,7 @@ async function windowsActions() {
 
       return  `
         <li>
-            <span class= "title">${placeName}</span>
+            <span class= "name">${placeName}</span>
             <span class= "address">${placeAddress}, 
             	${placeCity}</span>
             <span class= "category">${places.category}</span>

@@ -21,7 +21,7 @@ h1 {
   font-weight: bold;
   line-height: 100px;
 }
-
+ 
 .search-form {
   max-width: 400px;
   margin: 50px auto;
@@ -46,6 +46,10 @@ input.search {
   margin: 0;
   padding: 0;
   position: relative;
+}
+
+.name {
+  font-weight: bold;
 }
 
 .suggestions li {
