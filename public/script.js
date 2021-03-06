@@ -1,5 +1,5 @@
 const endpoint =
-  "https://gist.githubusercontent.com/reitwiec/708b4ec1b036aea2a8bac2b983223121/raw/433520cd58f1446c08631c59cef0a0f4bdcf15ca/states.json";
+  "https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json";
 
 const states = [];
 fetch(endpoint)
