@@ -3,17 +3,10 @@
 }
 
 .main {
-    background: red;
+    background: lightblue;
     height: 960px;
     width: 960px;
 }
-
-.second {
-    background: lightblue;
-    height: 500px;
-    width: 500px;
-}
-
 
 .button.is-primary {
     background: rgb(9, 110, 136);
