@@ -1,11 +1,17 @@
 body { 
   background-color: #bff7ef;
+  padding-bottom: 20px;
 }
 
 h1 {
   font-family: 'Recursive', sans-serif;
   font-size: 25px;
   padding-bottom: 20px;
+  text-decoration: underline;
+}
+
+ul {
+  list-style: none;
 }
 
 .container {
@@ -25,19 +31,31 @@ h1 {
   background: linear-gradient(rgb(226, 192, 117), rgb(230, 213, 215));
   border-bottom: 1px solid #eb9b9b;
   margin: 0;
-  padding: 20px;
-  display: flex;
+  padding-bottom: 40px;
+  margin-bottom: 15px;
   text-transform: uppercase;
+  width: 275px;
 }
 
+
 span.name {
-  font-family: Verdana, Geneva, Tahoma, sans-serif
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 600;
+  padding-left: 10px;
+  padding-top: 10px;
+  display: block;
 }
 
 span.category {
-  font-family: 'Courier New', Courier, monospace
+  font-family: 'Courier New', Courier, monospace;
+  padding-left: 10px;
+  padding-top: 10px;
+  display: block;
 }
 
 span.address {
-  font-family: 'Courier New', Courier, monospace
+  font-family: 'Courier New', Courier, monospace;
+  padding-left: 10px;
+  padding-top: 10px;
+  display: block;
 }

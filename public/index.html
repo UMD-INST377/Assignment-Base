@@ -12,9 +12,9 @@
     <div class="container">
         <h1>Vinson/Theodore Assignment 1</h1>
         <form id="searchForm">
-            <input type="text" size="40" name="query"/> 
+            <input class="input is-info input is-small" style="width: 275px;" type="text" placeholder="Search" name="query"/>
         </form>
-
+        
         <script>
             const food = [];
             fetch('/api')
@@ -41,13 +41,15 @@
             const zip = place.zip.replace(regex, `<span class="hl">${this.value}</span>`);
     
             return `
-                <ul>
+                <ul class="results">
                     <li>
                         <span class="name">${name}</span>
                         <span class="category">${type}</span>
+                        <address>
                         <span class="address">${address}</span>
                         <span class="address">${city}</span>
                         <span class="address">${zip}</span>
+                        </address>
                     </li>
                 </ul>
             `;
