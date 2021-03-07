@@ -6,12 +6,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Recursive&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Vinson/Theodore Assignment 1</h1>
     <div class="container">
+        <h1>Vinson/Theodore Assignment 1</h1>
         <form id="searchForm">
-            <input type="text" id="query" name="q"> 
+            <input type="text" size="40" name="query"/> 
         </form>
 
         <script>
@@ -30,7 +31,7 @@
 
 
         function displayMatches() {
-            const matchArray = findMatches(this.value, restaurants);
+            const matchArray = findMatches(this.value, food);
             const html = matchArray.map(place => {
             const regex = new RegExp(this.value, 'gi');
             const name = place.name.replace(regex, `<span class="hl">${this.value}</span>`);
@@ -43,10 +44,10 @@
                 <ul>
                     <li>
                         <span class="name">${name}</span>
-                        <span class="name">${type}</span>
-                        <span class="name">${address}</span>
-                        <span class="name">${city}</span>
-                        <span class="name">${zip}</span>
+                        <span class="category">${type}</span>
+                        <span class="address">${address}</span>
+                        <span class="address">${city}</span>
+                        <span class="address">${zip}</span>
                     </li>
                 </ul>
             `;
