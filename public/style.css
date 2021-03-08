@@ -1,0 +1,41 @@
+html, body{
+    margin: 10px;
+    width: 960px;
+    padding: 0;
+
+}
+
+/*html{
+    font-size: 10px;
+}*/
+
+body{
+    margin: 0, auto;
+    background-color: rgb(141, 138, 138);
+}
+
+h1{
+    margin-top: auto;
+    padding-top: 25px;
+    padding-bottom: 15px;
+    font-size: x-large;
+    font-weight: 600;
+    text-decoration: underline;
+font-family: 'Baloo 2', cursive;
+color: white;
+}
+
+.search{
+    color:black;
+}
+
+.card{
+    background-color: rgb(141, 138, 138);
+font-family: 'Baloo 2', cursive;
+}
+
+.box{
+    background: linear-gradient(navy, purple);
+font-family: 'Baloo 2', cursive;
+color: white;
+}
