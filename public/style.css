@@ -4,11 +4,20 @@ body {
     
   }
 
-  .main {
+.main {
     height: auto;
     width: auto;
+    
 }
 
+h1 {
+font-family: "Times New Roman", Times, serif;
+font-size: x-large;
+font-weight: bold;
+text-decoration: underline;
+color: black;
+
+}
 .second{
     background: lightseagreen;
     height: 50px;
@@ -21,6 +30,11 @@ body {
     margin-right: 100px;
 }
 
+.search {
+    margin: 10px;
+    width: 250px;
+}
+
 
 .column-background {
     background: goldenrod;
@@ -28,12 +42,13 @@ body {
 
 .column {
     margin: 0.75rem;
-    display:block;
+    display: block;
     flex-basis: 0;
     flex-grow: 1;
     flex-shrink: 1;
     padding: .75rem;
     text-align: center;
+    font-family: "Times New Roman", Times, serif;
 }
 
 
@@ -43,15 +58,23 @@ body {
     margin: 10px;
     margin-left: 150px;
     margin-right: 150px;
+    font-family: "Times New Roman", Times, serif;
+    font-size: large;
+    color: black;
 }
 
 .suggestion {
-    background-color: blueviolet;
+    background: linear-gradient(#84338b, #bf91e5);
     margin: 10px;
     width: 250px;
+    
 }
 
 h1 {
     text-align: center;
     
+}
+
+html {
+    background:rgb(223, 202, 17);
 }
