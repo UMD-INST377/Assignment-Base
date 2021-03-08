@@ -21,13 +21,13 @@ ul {
   margin: 0 auto;
 }
 
-.results {
+.target-list {
   margin: 0;
   padding: 0;
   position: relative;
 }
 
-.results li {
+.target-list li {
   background: linear-gradient(rgb(226, 192, 117), rgb(230, 213, 215));
   border-bottom: 1px solid #eb9b9b;
   margin: 0;

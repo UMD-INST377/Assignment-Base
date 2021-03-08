@@ -25,7 +25,7 @@ async function windowsActions() {
       //const filtered = data.filter((any) => any.name.toUpperCase() === search.value.toUpperCase());
       food_list.forEach((item) => {
         const appendItem = document.createElement('li');
-        appendItem.innerText = item.name + ' ' + item.address_line_1 + ' ' +  item.zip;
+        appendItem.innerText = item.name + ' ' + item.category + ' ' + item.address_line_1 + ' ' +  item.zip;
         targetList.append(appendItem);
       });
     });
