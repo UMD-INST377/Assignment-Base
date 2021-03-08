@@ -6,66 +6,19 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Recursive&display=swap" rel="stylesheet">
-    <link href="styles.css" rel="stylesheet">
 </head>
 <body>
+    <h1>Vinson/Theodore Assignment 1</h1>
     <div class="container">
-        <h1>Vinson/Theodore Assignment 1</h1>
-        <form id="searchForm">
-            <input class="input is-info input is-small" style="width: 275px;" type="text" placeholder="Search" name="query"/>
+        <form class="userform">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="search_value">
+            <button type="submit">Submit Form</button>
         </form>
-        
-        <script>
-            const food = [];
-            fetch('/api')
-                .then(blob => blob.json())
-                .then(data => food.push(...data));
+        <div class='main second'></div>
+        <ul class='target-list'></ul>
 
-            function findMatches(wordToMatch, food) {
-                return food.filter(any => {
-                    const regex = new RegExp(wordToMatch, 'gi');   
-                    return any.name.match(regex)
-                });
-            }
-
-
-
-        function displayMatches() {
-            const matchArray = findMatches(this.value, food);
-            const html = matchArray.map(place => {
-            const regex = new RegExp(this.value, 'gi');
-            const name = place.name.replace(regex, `<span class="hl">${this.value}</span>`);
-            const type = place.category.replace(regex, `<span class="hl">${this.value}</span>`);
-            const address = place.address_line_1.replace(regex, `<span class="hl">${this.value}</span>`);
-            const city = place.city.replace(regex, `<span class="hl">${this.value}</span>`);
-            const zip = place.zip.replace(regex, `<span class="hl">${this.value}</span>`);
-    
-            return `
-                <ul class="results">
-                    <li>
-                        <span class="name">${name}</span>
-                        <span class="category">${type}</span>
-                        <address>
-                        <span class="address">${address}</span>
-                        <span class="address">${city}</span>
-                        <span class="address">${zip}</span>
-                        </address>
-                    </li>
-                </ul>
-            `;
-            }).join('');
-            results.innerHTML = html;
-        }
-
-
-        
-        
-        
-        
-        
-        
-        
-        
+        <script src="script.js">
         
         </script>
     </div>
