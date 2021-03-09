@@ -10,6 +10,7 @@ html {
 input {
     width: 30%;
     margin-left: 680px;
+    padding: 10px;
 }
 
 .title {
