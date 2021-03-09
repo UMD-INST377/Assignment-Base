@@ -5,6 +5,7 @@ html {
 input {
     width: 30%;
     margin-left: 680px;
+    margin-bottom: 20px;
     padding: 10px;
 }
 
@@ -13,6 +14,7 @@ input {
     color: rgb(255, 255, 255);
     font-family: 'Roboto Condensed', sans-serif;
     text-decoration: underline;
+    margin-top: 20px;
 }
 
 .column-background {
