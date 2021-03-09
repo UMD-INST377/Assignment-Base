@@ -1,5 +1,5 @@
 html {
-    background: rgb(30, 82, 36);
+    background: rgb(80, 13, 13);
 }
 
 .body {
@@ -20,10 +20,6 @@ input {
     text-decoration: underline;
 }
 
-.button.is-primary {
-    background: rgb(103, 104, 101);
-}
-
 .column-background {
     background: goldenrod;
     height: 100px;
@@ -34,7 +30,7 @@ input {
 }
 
 .suggestions li {
-    background: linear-gradient(to bottom,  #ffffff 0%,#b7d8f7 100%);    margin-left: 680px;
+    background: linear-gradient(to top,  #ffffff 0%,#b7d8f7 100%);    margin-left: 680px;
     margin-top: 20px;
     margin-left: 300px;
     margin-right: 300px;
@@ -42,6 +38,7 @@ input {
     box-shadow: 1 1 10px rgba(12, 12, 12, 0.336);
     text-transform: capitalize;
     font-family: 'Shippori Mincho', serif;
+    line-height: 30px;
 }
 
 
@@ -50,7 +47,3 @@ input {
     margin: 40px ;
     background: white;
 }
-/* 
-.suggestions li {
-    background: linear-gradient(to bottom, yellow);
-} */
