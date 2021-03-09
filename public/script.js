@@ -24,8 +24,8 @@ async function windowsActions() {
       //const filtered = data.filter((any) => any.name.toUpperCase() === search.value.toUpperCase());
       food_list.forEach((item) => {
         const appendItem = document.createElement('li');
-        appendItem.innerHTML = `<span class="name">${item.name}</span>` + ' ' + `<span class="category">${item.category}</span>` + ' ' + `<span class="address">${item.address_line_1}</span>` + ' ' + `<span class="address">${item.city}</span>` + ' ' + `<span class="address">${item.zip}</span>`
-        targetList.append(appendItem);
+        appendItem.innerHTML = `<span class="name">${item.name}</span>` + ' ' + `<span class="category">${item.category}</span>` + ' ' + `<address><span class="address">${item.address_line_1}</span>` + ' ' + `<span class="address">${item.city}</span>` + ' ' + `<span class="address">${item.zip}</span></address>`
+        targetList.append(appendItem); 
       });
     });
   }
