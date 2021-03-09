@@ -13,13 +13,13 @@
 
         <form class="userform" action='/api' method='POST'>
             <label for="zipcode">Search:</label>
-            <input type="text" name="zipcode" class="zipcode" id="zipcode" placeholder="zipcode">
+            <input type="text" name="search" class="search" placeholder="zipcode">
             <button type="submit" class="button is-primary">Submit Form</button>
+            <ul class="suggestions">
+                <li>Filter for a Zip Code</li>
+            </ul>
         </form>   
-
-        <div class="main block">Results:
-            <ul class="target-list block"></ul>
-        </div>
+        
     </div>
 </body>
 </html>
