@@ -8,18 +8,19 @@
 </head>
 <script src="script.js"></script>
 <body>
-    <div class="container is-widescreen">
-        <h1 class="level">Assignment 2</h1>
+    <div class="container.is-max-desktop">
+        <h1 class="title">Assignment 2</h1>
 
         <form class="userform" action='/api' method='POST'>
-            <label for="zipcode">Search:</label>
-            <input type="text" name="search" class="search" placeholder="zipcode">
-            <button type="submit" class="button is-primary">Submit Form</button>
+            <div class="control">
+                <input type="text" class="search is-large" placeholder="Zip Code">
+                <!-- <span class="icon is-small is-left"> -->
+            </div>
             <ul class="suggestions">
                 <li>Filter for a Zip Code</li>
             </ul>
         </form>   
-        
+
     </div>
 </body>
 </html>
