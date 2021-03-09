@@ -10,7 +10,6 @@ async function windowsActions() {
     const form = document.querySelector('.userform');
     const search = document.querySelector('#search_value');
     const targetList = document.querySelector('.target-list');
-  
     const request = await fetch('https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json');
     const data = await request.json();
     
@@ -25,7 +24,7 @@ async function windowsActions() {
       //const filtered = data.filter((any) => any.name.toUpperCase() === search.value.toUpperCase());
       food_list.forEach((item) => {
         const appendItem = document.createElement('li');
-        appendItem.innerText = item.name + ' ' + item.category + ' ' + item.address_line_1 + ' ' +  item.zip;
+        appendItem.innerHTML = `<span class="name">${item.name}</span>` + ' ' + `<span class="category">${item.category}</span>` + ' ' + `<span class="address">${item.address_line_1}</span>` + ' ' + `<span class="address">${item.city}</span>` + ' ' + `<span class="address">${item.zip}</span>`
         targetList.append(appendItem);
       });
     });
