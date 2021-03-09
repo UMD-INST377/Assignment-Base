@@ -41,7 +41,8 @@ input {
     padding: 20px;
     box-shadow: 1 1 10px rgba(12, 12, 12, 0.336);
     text-transform: capitalize;
-    font-family: 'Shippori Mincho', serif;}
+    font-family: 'Shippori Mincho', serif;
+}
 
 
 .target-list {
