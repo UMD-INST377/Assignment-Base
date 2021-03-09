@@ -2,11 +2,6 @@ html {
     background: rgb(80, 13, 13);
 }
 
-.body {
-    margin: 960px;
-    text-align: center;
-}
-
 input {
     width: 30%;
     margin-left: 680px;
@@ -41,9 +36,3 @@ input {
     line-height: 30px;
 }
 
-
-.target-list {
-    margin-top: 50px;
-    margin: 40px ;
-    background: white;
-}
