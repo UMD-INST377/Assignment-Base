@@ -19,9 +19,10 @@ async function windowActions() {
             const zipCode = restaurant.zip.replace(regex, `<span class="h1">${event.target.value}</span>`);
             return `
             <li>
-            <span class="name>${zipCode}</span>
-            <span class="category">${restaurant.category}</span>
-            <span class="address">${restaurant.address_line_1}</span>
+            <span class="name">${restaurant.name}</span></br>
+            <span class="name>${zipCode}</span></br>
+            <span class="category">${restaurant.category}</span></br>
+            <span class="address">${restaurant.address_line_1}</span></br>
             </li>
             `;
         }).join('');
