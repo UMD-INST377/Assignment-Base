@@ -24,8 +24,7 @@
         const restaurants = [];
         const request = await fetch(endpoint)
         const arrayName = await request.json()
-
-
+        
         function findMatches(wordToMatch, restaurants) {
             return restaurants.filter(place => {
                 const regex = new RegExp(wordToMatch, 'gi');
