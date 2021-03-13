@@ -48,7 +48,8 @@ async function windowsActions() {
 
             return `
                 <div class="box1">
-                    ${restName}<br>
+                // <div class="is-size-5"></div>
+                    ${restName}<br> 
                     ${place.address_line_1}<br>
                     ${place.address_line_2}<br>
                     ${place.city}
