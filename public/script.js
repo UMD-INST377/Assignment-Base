@@ -23,7 +23,7 @@ async function windowsActions() {
             return `
             <div class="box1">
                 <li>
-                ${restName}<br>
+                <div class="Rname">${restName}</div>
                 ${place.address_line_1}<br>
                 ${place.address_line_2}<br>
                 ${place.city}

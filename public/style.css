@@ -28,7 +28,7 @@ body {
 
 h1 {
     margin-bottom: 10px;
-    font-size: 2em;
+    font-size: 1.5em;
     font-family: 'Poppins', serif;
     text-align: center;
     
@@ -178,4 +178,9 @@ h1 {
     display: block;
     white-space: pre-line; 
 
+}
+
+.Rname {
+    font-size: 2.5rem;
+    font-weight: 800;
 }
