@@ -5,19 +5,22 @@
     <title>Peyton & Tabraiz Assignment 1</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&family=Shippori+Mincho:wght@500&display=swap" rel="stylesheet">  
 </head>
 <script src="script.js"></script>
 <body>
-    <div class="container.is-widescreen">
-        <h1 class="level">Assignment 2</h1>
+    <div class="container.is-max-desktop">
+        <h1 class="title">Assignment 2</h1>
 
         <form class="userform" action='/api' method='POST'>
-            <input type="text is-info" class="search" placeholder="zipcode">
-        
-            <ul class="suggstions">
-                <li>list</li>   
+            <div class="control">
+                <input type="text is-info" class="search is-large" placeholder="Zip Code">
+            </div>
+            <ul class="suggestions">
+                <li>Results</li>
             </ul>
-        </form>
+        </form>   
 
     </div>
 </body>

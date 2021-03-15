@@ -1,19 +1,32 @@
-.body {
-    margin: 960px;
+html {
+    background: rgb(80, 13, 13);
 }
 
-.main {
-    background: lightblue;
-    height: 960px;
-    width: 960px;
+input {
+    width: 30%;
+    margin-left: 680px;
+    margin-bottom: 20px;
+    padding: 10px;
 }
 
+<<<<<<< HEAD
+=======
+.title {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-family: 'Roboto Condensed', sans-serif;
+    text-decoration: underline;
+    margin-top: 20px;
+}
+
+>>>>>>> 07f5d2104b92c149ceedfff36f132f5c52f58586
 .column-background {
     background: goldenrod;
     height: 100px;
 }
 
 .suggestions ul {
+<<<<<<< HEAD
     margin: 500px;
 }
 
@@ -26,3 +39,19 @@
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     line-height: normal;
 }
+=======
+    margin-left: 680px;
+}
+
+.suggestions li {
+    background: linear-gradient(to top,  #ffffff 0%,#b7d8f7 100%);    margin-left: 680px;
+    margin-top: 20px;
+    margin-left: 300px;
+    margin-right: 300px;
+    padding: 20px;
+    box-shadow: 1 1 10px rgba(12, 12, 12, 0.336);
+    text-transform: uppercase;
+    font-family: 'Shippori Mincho', serif;
+    line-height: 30px;
+}
+>>>>>>> 07f5d2104b92c149ceedfff36f132f5c52f58586
