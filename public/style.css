@@ -8,25 +8,21 @@
     width: 960px;
 }
 
-.button.is-primary {
-    background: rgb(9, 110, 136);
-}
-
 .column-background {
     background: goldenrod;
     height: 100px;
 }
 
-.ul {
-    margin: auto;
+.suggestions ul {
+    margin: 500px;
 }
 
-.li {
-    background: yellow;
-}
-
-.target-list {
-    margin-top: 50px;
-    margin: 40px ;
-    background: white;
+.suggestions li {
+    background: purple; 
+    margin-left: 500px;
+    margin-top: 15px;
+    margin-right: 275px;
+    padding: 20px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    line-height: normal;
 }

@@ -8,17 +8,17 @@
 </head>
 <script src="script.js"></script>
 <body>
-    <div class="container is-widescreen">
+    <div class="container.is-widescreen">
         <h1 class="level">Assignment 2</h1>
 
         <form class="userform" action='/api' method='POST'>
-            <input type="text is-info" name="zipcode" class="zipcode" id="zipcode" placeholder="zipcode">
-            <button type="submit" class="button is-primary">Submit Form</button>
-        </form>   
+            <input type="text is-info" class="search" placeholder="zipcode">
+        
+            <ul class="suggstions">
+                <li>list</li>   
+            </ul>
+        </form>
 
-        <div class="main block">Results:
-            <ul class="target-list block"></ul>
-        </div>
     </div>
 </body>
 </html>

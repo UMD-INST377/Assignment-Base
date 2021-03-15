@@ -23,10 +23,8 @@ async function windowActions() {
         };
     }   
 
-    // this listens for typing into the input box
-    search.addEventListener('input', (event) => {
-        console.log('input', event.target.value);
-    });
+    const searchInput = document.querySelector('.search');
+    const suggestions = document.querySelector('.suggestions');
 
     search.addEventListener('change', displayMatches);
     search.addEventListener('keyup', (event) => {
