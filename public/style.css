@@ -9,8 +9,6 @@ input {
     padding: 10px;
 }
 
-<<<<<<< HEAD
-=======
 .title {
     text-align: center;
     color: rgb(255, 255, 255);
@@ -19,27 +17,12 @@ input {
     margin-top: 20px;
 }
 
->>>>>>> 07f5d2104b92c149ceedfff36f132f5c52f58586
 .column-background {
     background: goldenrod;
     height: 100px;
 }
 
 .suggestions ul {
-<<<<<<< HEAD
-    margin: 500px;
-}
-
-.suggestions li {
-    background: purple; 
-    margin-left: 500px;
-    margin-top: 15px;
-    margin-right: 275px;
-    padding: 20px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    line-height: normal;
-}
-=======
     margin-left: 680px;
 }
 
@@ -54,4 +37,3 @@ input {
     font-family: 'Shippori Mincho', serif;
     line-height: 30px;
 }
->>>>>>> 07f5d2104b92c149ceedfff36f132f5c52f58586
