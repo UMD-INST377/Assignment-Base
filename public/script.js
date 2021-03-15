@@ -1,55 +1,28 @@
 
 async function windowActions() {
     console.log('window loaded');
-    const form = document.querySelector('.userform');
-    const search = document.querySelector('#zipcode')
-    const targetList = document.querySelector('.target-list');
 
-    const request = await fetch('https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json');
+    const endpoint = "https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json"
+    const request = await fetch(endpoint);
     const data = await request.json();
 
-<<<<<<< HEAD
-    search.addEventListener('input', (event)=>{
-        console.log('input', event.target.value)
-        const display = data.filter(record) =>{
-            return record.city.toUpperCase().includes(event.target.value.toUpperCase() || record.zip.includes(event.target.value));
-        };
-
-        // filter through each restaurant to add its name, cat, add, and zip into the list
-        function displayMatches(function displayMatches(event)) {
-=======
-    form.addEventListener('submit', async (event) => {
-        event.preventDefault();
-        console.log('submit fired', event.target.value);
-        const filtered = data.filter((record) => {
-            const regex = new RegExp(event.target.value, 'gi');
-            return record.zip.match(regex)
+    function findMatches(wordToMatch, data) {
+        return.data.filter(restaurant => {
+            const regex = new RegExp(wordToMatch, 'gi');
+            return restaurant.data.match(regex)
         })
-        displayMatches(event.target.value);
-        ;
-        
-        // filter through each restaurant to add its name, cat, add, and zip into the target list
-        function displayMatches() {
->>>>>>> 7715a97c691056a22385a11eef6b88b1fe765a51
-            filtered.forEach(restaurant => {
-                const newItem = document.createElement('li');
-                newItem.classList.add('list-item');
-                newItem.innerHTML = `
-                <h2>${restaurant.name}</h2>
-                <h3>${restaurant.category}</h3>
-                ${restaurant.address_line_1}
-                ${restaurant.zip}
-                `;
-                targetList.append(newItem);
-            }); 
+    }
+
+        function displayMatches(event) {
+            const array = findMatches(event.target.value, data);
+            const html = array.map.(restaurant => {
+                const regex = new RegExp(event.target.value, 'gi');
+                const zipcode = restaurant.data.replace(regex)
+                return
+            })
         };
-<<<<<<< HEAD
     }   
 
-=======
-    })
-    
->>>>>>> 7715a97c691056a22385a11eef6b88b1fe765a51
     // this listens for typing into the input box
     search.addEventListener('input', (event) => {
         console.log('input', event.target.value);
@@ -62,8 +35,4 @@ async function windowActions() {
 
 };
 
-<<<<<<< HEAD
 window.onload = windowActions;
-=======
-window.onload = windowActions;
->>>>>>> 7715a97c691056a22385a11eef6b88b1fe765a51
