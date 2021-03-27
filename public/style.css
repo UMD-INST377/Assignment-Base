@@ -1,0 +1,39 @@
+body {
+  width: 70%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.box {
+  background-color: #81b4e7;
+}
+
+h1 {
+  font-size: 3rem;
+  text-align: center;
+  font-weight: 500;
+  font-family: 'Big Shoulders Display', Semi-bold 600;
+  color: #474747;
+}
+
+h2 {
+  font-family: 'Roboto Condensed', sans-serif;
+  color: #757575;
+  text-align: center;
+  font-size: 2rem;
+  line-height: 1.5;
+}
+
+.search {
+  font-family: 'Roboto Condensed', sans-serif;
+  color: #575656;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: center;
+  padding-top: 10px;
+}
+
+/*background-color: red; *//* For browsers that do not support gradients */
+  /*background-image: linear-gradient(red, yellow);*/
+
+  
