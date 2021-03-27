@@ -1,9 +1,10 @@
 // These are our required libraries to make the server work.
 /* eslint-disable no-console */
 /* eslint-disable no-unused-vars */
-import express from 'express';
+import express, { request } from 'express';
 import dotenv from 'dotenv';
 import fetch from 'node-fetch';
+
 
 dotenv.config();
 
@@ -39,3 +40,4 @@ app.route('/api')
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}!`);
 });
+
