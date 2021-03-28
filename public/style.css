@@ -1,0 +1,30 @@
+
+.main {
+    background: red;
+    height: 150px;
+    width: 150px;
+}
+
+.second{
+    background: lightseagreen;
+    height: 50px;
+    width: 50px;
+}
+
+.button.is-primary {
+    background: red;
+}
+
+
+.column-background {
+    background: goldenrod;
+}
+
+.column {
+    margin: 0.75rem;
+    display: block;
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
+    padding: .75rem;
+}
