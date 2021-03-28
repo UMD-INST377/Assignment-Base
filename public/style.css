@@ -1,0 +1,40 @@
+body {
+    color: #FFFFFF;
+    background-color: #008080	;
+    font-family: "Helvetica", "Arial", sans-serif;
+    line-height: 1.3;
+  
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+  }
+  
+  
+  
+h1.header{
+color: #FFFFFF;
+font-size: 60px;
+font-family: "Helvetica", "Arial", sans-serif;
+text-decoration: underline;
+}
+
+input {
+    width: 300px;
+    font-size: 14pt;
+    margin: 100px;
+
+}
+
+
+div {
+color: #FFFFFF;
+width: 900px;
+height: 900px;
+align-items: left;
+margin-top: 20px;
+}
+
+
+ul {
+background-image: linear-gradient(yellow, white);
+}

@@ -1,10 +1,47 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Humdan Assignment 2</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <!--<link rel='stylesheet' href='style.css'>-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin="">
+    </script>
+   <style>
+    #mapid { height: 180px; }
+    </style>
 </head>
 <body>
-    Put your app here
-</body>
-</html>
+    
+    <div class="column is-half">
+    <h1 class = 'header'> Humdan Ahmed </h1>
+    
+    <form action='' method='get' class='speaker-form'>
+        <div class='form-row'>
+            <label for='restaraunt-name'></label> 
+                <!-- correct labels for & id ?  -->
+            <input type="text" class="search" placeholder="Filter">
+        </div>
+    </form>
+
+        <div id="mapid"></div>
+    
+     
+        <ul class='suggestions'>
+            
+        </ul>
+    </div>
+      <script src="script.js">
+          
+    </script>
+    </body>
+    
+    </html>
+      
+    
